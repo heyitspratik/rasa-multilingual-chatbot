@@ -356,3 +356,6 @@ nlu:
 - intent: dashboard
   examples: |
     - dashboard
+- intent: home
+  examples: |
+    - home

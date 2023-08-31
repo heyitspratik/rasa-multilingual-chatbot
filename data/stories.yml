@@ -216,3 +216,7 @@ stories:
   steps:
   - intent: dashboard
   - action: utter_dashboard
+- story: see homepage
+  steps:
+  - intent: home
+  - action: utter_home

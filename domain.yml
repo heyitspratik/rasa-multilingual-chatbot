@@ -66,6 +66,7 @@ intents:
 - out_of_scope_telugu
 - deny
 - dashboard
+- home
 entities:
 - name
 - state
@@ -148,6 +149,8 @@ responses:
       title: I want to add/update my date of birth/email
     - payload: /dashboard
       title: I want to see dashboard
+    - payload: /home
+      title: I want to see home page
     text: Please select your issue from below option
   utter_profile_menu_hindi:
   - buttons:
@@ -757,8 +760,18 @@ responses:
       text: This is dashboard (mobile)
     text: This is dashboard
   - text: This is dashboard (web)
+  utter_home:
+  - channel: myio
+    custom:
+      buttons:
+      - title: Go to home page
+        type: '3'
+      text: This is home page (mobile)
+    text: This is home page (mobile)
+  - text: This is home page (web)
 actions:
 - action_hello_world_action_test
 - action_greet
 - action_html_entity_encode
 - utter_dashboard
+- utter_home

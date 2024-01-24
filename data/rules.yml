@@ -17,10 +17,15 @@ rules:
   - intent: goodbye_marathi
   - action: utter_goodbye_marathi
 
-- rule: Say వీడ్కోలు anytime the user says వీడ్కోలు
+- rule: Say பிரியாவிடை anytime the user says பிரியாவிடை
   steps:
-  - intent: goodbye_telugu
-  - action: utter_goodbye_telugu
+  - intent: goodbye_tamil
+  - action: utter_goodbye_tamil
+
+- rule: Say ବିଦାୟ anytime the user says ବିଦାୟ
+  steps:
+  - intent: goodbye_odia
+  - action: utter_goodbye_odia
 
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
@@ -37,10 +42,15 @@ rules:
   - intent: iamabot_marathi
   - action: utter_iamabot_marathi
 
-- rule: Say 'నేనొక రోబోని' anytime the user challenges
+- rule: Say 'நான் ஒரு ரோபோ' anytime the user challenges
   steps:
-  - intent: iamabot_telugu
-  - action: utter_iamabot_telugu
+  - intent: iamabot_tamil
+  - action: utter_iamabot_tamil
+
+- rule: Say 'ମୁଁ ଏକ ଡଙ୍ଗା' anytime the user challenges
+  steps:
+  - intent: iamabot_odia
+  - action: utter_iamabot_odia
 
 - rule: answer out of scope
   steps:
@@ -57,7 +67,12 @@ rules:
   - intent: out_of_scope_marathi
   - action: utter_out_of_scope_marathi
 
-- rule: answer out of scope telugu
+- rule: answer out of scope tamil
   steps:
-  - intent: out_of_scope_telugu
-  - action: utter_out_of_scope_telugu
+  - intent: out_of_scope_tamil
+  - action: utter_out_of_scope_tamil
+
+- rule: answer out of scope odia
+  steps:
+  - intent: out_of_scope_odia
+  - action: utter_out_of_scope_odia

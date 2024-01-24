@@ -17,6 +17,26 @@ action_endpoint:
 # By default the conversations are stored in memory.
 # https://rasa.com/docs/rasa/tracker-stores
 
+# tracker_store:
+# #  store_type: custom_tracker.SQLTrackerStore
+#  type: sql
+#  dialect: "mysql+pymysql"
+#  url: mysql://root:my_password@172.19.0.2:3306/rasa
+#  port: 3306
+#  username: "root"
+#  password: "my_password"
+#  db: "rasa"
+
+# tracker_store:
+# #  store_type: custom_tracker.SQLTrackerStore
+#  type: sql
+#  dialect: "postgresql"
+#  url: postgresql://admin:2GV0Z4CcICAcs9u@192.168.48.4:5432/rasa
+#  port: 5432
+#  username: "admin"
+#  password: "2GV0Z4CcICAcs9u"
+#  db: "rasa"
+
 #tracker_store:
 #    type: redis
 #    url: <host of the redis instance, e.g. localhost>

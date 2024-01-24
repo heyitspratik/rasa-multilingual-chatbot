@@ -2,12 +2,35 @@ from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet, UserUttered, BotUttered
+from rasa.core.channels.channel import InputChannel
 import langid
 
 class MyIO(InputChannel):
     def name() -> Text:
         """Name of your custom channel."""
         return "myio"
+
+
+class ActionExtractMobileNumber(Action):
+    def name(self) -> Text:
+        return "action_extract_mobile_number"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Extracting user events
+        import pdb;pdb.set_trace()
+        mobile_number = tracker.latest_message['metadata']['mobile_number']
+        events = tracker.current_state()['events']
+
+        custom_data = {"key": mobile_number}
+
+        # Send a custom event to store the custom data
+        bot_utterance = BotUttered(
+            metadata={"metadata": custom_data}
+        )
+        return [bot_utterance]
+
+
     
 class ActionGreet(Action):
     def name(self) -> Text:
@@ -66,21 +89,37 @@ class ActionGreet(Action):
                 'Thanks_marathi': 'utter_Thanks_marathi',
                 'out_of_scope_marathi': 'utter_out_of_scope_marathi',
             },
-            'te': {
-                'telugu': 'utter_telugu',
-                'profile_menu_telugu': 'utter_profile_menu_telugu',
-                'update_profile_picture_telugu': 'utter_update_profile_picture_telugu',
-                'update_mobile_telugu': 'utter_update_mobile_telugu',
-                'update_personal_details_telugu': 'utter_update_personal_details_telugu',
-                'certificates_telugu': 'utter_certificates_telugu',
-                'password_menu_telugu': 'utter_password_menu_telugu',
-                'policy_menu_telugu': 'utter_policy_menu_telugu',
-                'happy_telugu': 'utter_happy_telugu',
-                'affirm_telugu': 'utter_affirm_telugu',
-                'goodbye_telugu': 'utter_goodbye_telugu',
-                'iamabot_telugu': 'utter_iamabot_telugu',
-                'Thanks_telugu': 'utter_Thanks_telugu',
-                'out_of_scope_telugu': 'utter_out_of_scope_telugu',
+            'ta': {
+                'tamil': 'utter_tamil',
+                'profile_menu_tamil': 'utter_profile_menu_tamil',
+                'update_profile_picture_tamil': 'utter_update_profile_picture_tamil',
+                'update_mobile_tamil': 'utter_update_mobile_tamil',
+                'update_personal_details_tamil': 'utter_update_personal_details_tamil',
+                'certificates_tamil': 'utter_certificates_tamil',
+                'password_menu_tamil': 'utter_password_menu_tamil',
+                'policy_menu_tamil': 'utter_policy_menu_tamil',
+                'happy_tamil': 'utter_happy_tamil',
+                'affirm_tamil': 'utter_affirm_tamil',
+                'goodbye_tamil': 'utter_goodbye_tamil',
+                'iamabot_tamil': 'utter_iamabot_tamil',
+                'Thanks_tamil': 'utter_Thanks_tamil',
+                'out_of_scope_tamil': 'utter_out_of_scope_tamil',
+            },
+            'or': {
+                'odia': 'utter_odia',
+                'profile_menu_odia': 'utter_profile_menu_odia',
+                'update_profile_picture_odia': 'utter_update_profile_picture_odia',
+                'update_mobile_odia': 'utter_update_mobile_odia',
+                'update_personal_details_odia': 'utter_update_personal_details_odia',
+                'certificates_odia': 'utter_certificates_odia',
+                'password_menu_odia': 'utter_password_menu_odia',
+                'policy_menu_odia': 'utter_policy_menu_odia',
+                'happy_odia': 'utter_happy_odia',
+                'affirm_odia': 'utter_affirm_odia',
+                'goodbye_odia': 'utter_goodbye_odia',
+                'iamabot_odia': 'utter_iamabot_odia',
+                'Thanks_odia': 'utter_Thanks_odia',
+                'out_of_scope_odia': 'utter_out_of_scope_odia',
             },
             
             # add more language codes and language-specific responses dictionaries here
@@ -96,3 +135,4 @@ class ActionGreet(Action):
         dispatcher.utter_message(response_key)
         
         return []
+

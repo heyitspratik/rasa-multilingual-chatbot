@@ -1,222 +1,345 @@
 version: "3.0"
+
 stories:
+
 - story: greet user
   steps:
   - intent: greet
   - action: utter_greet
+
 - story: menu in english
   steps:
   - intent: english
   - action: utter_english
+
 - story: menu in hindi
   steps:
   - intent: hindi
   - action: utter_hindi
+
 - story: menu in marathi
   steps:
   - intent: marathi
   - action: utter_marathi
-- story: menu in telugu
+
+- story: menu in tamil
   steps:
-  - intent: telugu
-  - action: utter_telugu
+  - intent: tamil
+  - action: utter_tamil
+
+- story: menu in odia
+  steps:
+  - intent: odia
+  - action: utter_odia
+
 - story: profile menu in english
   steps:
   - intent: profile_menu
   - action: utter_profile_menu
+
 - story: profile menu in hindi
   steps:
   - intent: profile_menu_hindi
   - action: utter_profile_menu_hindi
+
 - story: profile menu in marathi
   steps:
   - intent: profile_menu_marathi
   - action: utter_profile_menu_marathi
-- story: profile menu in telugu
+
+- story: profile menu in tamil
   steps:
-  - intent: profile_menu_telugu
-  - action: utter_profile_menu_telugu
+  - intent: profile_menu_tamil
+  - action: utter_profile_menu_tamil
+
+- story: profile menu in odia
+  steps:
+  - intent: profile_menu_odia
+  - action: utter_profile_menu_odia
+
 - story: update profile picture
   steps:
   - intent: update_profile_picture
   - action: utter_update_profile_picture
+
 - story: update profile picture hindi
   steps:
   - intent: update_profile_picture_hindi
   - action: utter_update_profile_picture_hindi
+
 - story: update profile picture marathi
   steps:
   - intent: update_profile_picture_marathi
   - action: utter_update_profile_picture_marathi
-- story: update profile picture telugu
+
+- story: update profile picture tamil
   steps:
-  - intent: update_profile_picture_telugu
-  - action: utter_update_profile_picture_telugu
+  - intent: update_profile_picture_tamil
+  - action: utter_update_profile_picture_tamil
+
+- story: update profile picture odia
+  steps:
+  - intent: update_profile_picture_odia
+  - action: utter_update_profile_picture_odia
+
 - story: update mobile
   steps:
   - intent: update_mobile
   - action: utter_update_mobile
+
 - story: update mobile hindi
   steps:
   - intent: update_mobile_hindi
   - action: utter_update_mobile_hindi
+
 - story: update mobile marathi
   steps:
   - intent: update_mobile_marathi
   - action: utter_update_mobile_marathi
-- story: update mobile telugu
+
+- story: update mobile tamil
   steps:
-  - intent: update_mobile_telugu
-  - action: utter_update_mobile_telugu
+  - intent: update_mobile_tamil
+  - action: utter_update_mobile_tamil
+
+- story: update mobile odia
+  steps:
+  - intent: update_mobile_odia
+  - action: utter_update_mobile_odia
+
+
 - story: update personal details
   steps:
   - intent: update_personal_details
   - action: utter_update_personal_details
+
 - story: update personal details hindi
   steps:
   - intent: update_personal_details_hindi
   - action: utter_update_personal_details_hindi
+
 - story: update personal details marathi
   steps:
   - intent: update_personal_details_marathi
   - action: utter_update_personal_details_marathi
-- story: update personal details telugu
+
+- story: update personal details tamil
   steps:
-  - intent: update_personal_details_telugu
-  - action: utter_update_personal_details_telugu
+  - intent: update_personal_details_tamil
+  - action: utter_update_personal_details_tamil
+
+- story: update personal details odia
+  steps:
+  - intent: update_personal_details_odia
+  - action: utter_update_personal_details_odia
+
 - story: certificates
   steps:
   - intent: certificates
   - action: utter_certificates
+
 - story: certificates hindi
   steps:
   - intent: certificates_hindi
   - action: utter_certificates_hindi
+
 - story: certificates marathi
   steps:
   - intent: certificates_marathi
   - action: utter_certificates_marathi
-- story: certificates telugu
+
+- story: certificates tamil
   steps:
-  - intent: certificates_telugu
-  - action: utter_certificates_telugu
+  - intent: certificates_tamil
+  - action: utter_certificates_tamil
+
+- story: certificates odia
+  steps:
+  - intent: certificates_odia
+  - action: utter_certificates_odia
+
 - story: password menu
   steps:
   - intent: password_menu
   - action: utter_password_menu
+
 - story: password menu hindi
   steps:
   - intent: password_menu_hindi
   - action: utter_password_menu_hindi
+
 - story: password menu marathi
   steps:
   - intent: password_menu_marathi
   - action: utter_password_menu_marathi
-- story: password menu telugu
+
+- story: password menu tamil
   steps:
-  - intent: password_menu_telugu
-  - action: utter_password_menu_telugu
+  - intent: password_menu_tamil
+  - action: utter_password_menu_tamil
+
+- story: password menu odia
+  steps:
+  - intent: password_menu_odia
+  - action: utter_password_menu_odia
+
 - story: policy menu
   steps:
   - intent: policy_menu
   - action: utter_policy_menu
+
 - story: policy menu hindi
   steps:
   - intent: policy_menu_hindi
   - action: utter_policy_menu_hindi
+
 - story: policy menu marathi
   steps:
   - intent: policy_menu_marathi
   - action: utter_policy_menu_marathi
-- story: policy menu telugu
+
+- story: policy menu tamil
   steps:
-  - intent: policy_menu_telugu
-  - action: utter_policy_menu_telugu
+  - intent: policy_menu_tamil
+  - action: utter_policy_menu_tamil
+
+- story: policy menu odia
+  steps:
+  - intent: policy_menu_odia
+  - action: utter_policy_menu_odia
+
 - story: affirm menu
   steps:
   - intent: affirm
   - action: utter_affirm
+
 - story: affirm menu hindi
   steps:
   - intent: affirm_hindi
   - action: utter_affirm_hindi
+
 - story: affirm menu marathi
   steps:
   - intent: affirm_marathi
   - action: utter_affirm_marathi
-- story: affirm menu telugu
+
+- story: affirm menu tamil
   steps:
-  - intent: affirm_telugu
-  - action: utter_affirm_telugu
+  - intent: affirm_tamil
+  - action: utter_affirm_tamil
+
+- story: affirm menu odia
+  steps:
+  - intent: affirm_odia
+  - action: utter_affirm_odia
+
 - story: happy menu
   steps:
   - intent: happy
   - action: utter_happy
+
 - story: happy menu hindi
   steps:
   - intent: happy_hindi
   - action: utter_happy_hindi
+
 - story: happy menu marathi
   steps:
   - intent: happy_marathi
   - action: utter_happy_marathi
-- story: happy menu telugu
+
+- story: happy menu tamil
   steps:
-  - intent: happy_telugu
-  - action: utter_happy_telugu
+  - intent: happy_tamil
+  - action: utter_happy_tamil
+
+- story: happy menu odia
+  steps:
+  - intent: happy_odia
+  - action: utter_happy_odia
+
 - story: thanks path
   steps:
   - intent: Thanks
   - action: utter_Thanks
+
 - story: thanks path hindi
   steps:
   - intent: Thanks_hindi
   - action: utter_Thanks_hindi
+
 - story: thanks path marathi
   steps:
   - intent: Thanks_marathi
   - action: utter_Thanks_marathi
-- story: thanks path telugu
+
+- story: thanks path tamil
   steps:
-  - intent: Thanks_telugu
-  - action: utter_Thanks_telugu
+  - intent: Thanks_tamil
+  - action: utter_Thanks_tamil
+
+- story: thanks path odia
+  steps:
+  - intent: Thanks_odia
+  - action: utter_Thanks_odia
+
 - story: who am i
   steps:
   - intent: iamabot
   - action: utter_iamabot
+
 - story: who am i hindi
   steps:
   - intent: iamabot_hindi
   - action: utter_iamabot_hindi
+
 - story: who am i marathi
   steps:
   - intent: iamabot_marathi
   - action: utter_iamabot_marathi
-- story: who am i telugu
+
+- story: who am i tamil
   steps:
-  - intent: iamabot_telugu
-  - action: utter_iamabot_telugu
+  - intent: iamabot_tamil
+  - action: utter_iamabot_tamil
+
+- story: who am i odia
+  steps:
+  - intent: iamabot_odia
+  - action: utter_iamabot_odia
+
 - story: out of scope
   steps:
   - intent: out_of_scope
   - action: utter_out_of_scope
+
 - story: out of scope hindi
   steps:
   - intent: out_of_scope_hindi
   - action: utter_out_of_scope_hindi
+
 - story: out of scope marathi
   steps:
   - intent: out_of_scope_marathi
   - action: utter_out_of_scope_marathi
-- story: out of scope telugu
+
+- story: out of scope tamil
   steps:
-  - intent: out_of_scope_telugu
-  - action: utter_out_of_scope_telugu
-- story: see dashboard
+  - intent: out_of_scope_tamil
+  - action: utter_out_of_scope_tamil
+
+- story: out of scope odia
   steps:
-  - intent: dashboard
-  - action: utter_dashboard
-- story: see homepage
-  steps:
-  - intent: home
-  - action: utter_home
+  - intent: out_of_scope_odia
+  - action: utter_out_of_scope_odia
+
+
+# - story: User provides user_id
+#   steps:
+#   - intent: greet
+#     entities:
+#       - user_id: "1234"  # Or use the actual user_id from the initPayload
+#   - action: your_action_name
+#   - slot_was_set:
+#       - user_id: "1234"  # Or use the actual user_id from the initPayload
+

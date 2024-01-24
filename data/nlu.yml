@@ -26,6 +26,7 @@ nlu:
     - नमस्कार
     - हेलो
     - शुभ प्रभात
+
 - intent: goodbye
   examples: |
     - good afternoon
@@ -39,19 +40,29 @@ nlu:
     - see you around
     - bye bye
     - see you later
+
 - intent: goodbye_hindi
   examples: |
     - अलविदा
     - बाई
     - बाद में मिलते हैं
+
 - intent: goodbye_marathi
   examples: |
     - निरोप
     - पुन्हा भेटू
-- intent: goodbye_telugu
+
+- intent: goodbye_tamil
   examples: |
-    - వీడ్కోలు
-    - తర్వాత కలుద్దాం
+    - பிரியாவிடை
+    - பிறகு பார்க்கலாம்
+
+- intent: goodbye_odia
+  examples: |
+    - ବିଦାୟ
+    - ଚାକରାଣୀ
+    - ପରେ ଦେଖା ହେବ
+
 - intent: affirm
   examples: |
     - yes
@@ -62,6 +73,7 @@ nlu:
     - correct
     - ok
     - nice
+
 - intent: affirm_hindi
   examples: |
     - हाँ
@@ -71,6 +83,7 @@ nlu:
     - सही
     - अच्छा
     - ठीक
+
 - intent: affirm_marathi
   examples: |
     - होय
@@ -80,15 +93,28 @@ nlu:
     - योग्य
     - ठीक आहे
     - छान
-- intent: affirm_telugu
+
+- intent: affirm_tamil
   examples: |
-    - బాగుంది
-    - అవును
-    - నిజానికి
-    - కోర్సు యొక్క
-    - బాగుంది కదూ
-    - సరైన
-    - అలాగే
+    - நல்ல
+    - ஆம்
+    - உண்மையில்
+    - நிச்சயமாக
+    - நன்றாக இருக்கிறது
+    - சரி
+    - மேலும்
+    - நல்ல
+
+- intent: affirm_odia
+  examples: |
+    - ହଁ
+    - ଏହା
+    - ପ୍ରକୃତରେ
+    - ଅବଶ୍ୟ
+    - ସଠିକ୍
+    - ଭଲ
+    - ସଠିକ୍
+
 - intent: deny
   examples: |
     - no
@@ -97,6 +123,7 @@ nlu:
     - I don't think so
     - don't like that
     - no way
+
 - intent: mood_great
   examples: |
     - perfect
@@ -113,6 +140,7 @@ nlu:
     - so so perfect
     - so good
     - so perfect
+
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -129,6 +157,7 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+
 - intent: iamabot
   examples: |
     - are you a bot?
@@ -141,6 +170,7 @@ nlu:
     - tell me about yourself?
     - tell me about yourself
     - what are you?
+
 - intent: iamabot_hindi
   examples: |
     - क्या तुम बोट हो?
@@ -149,6 +179,7 @@ nlu:
     - क्या मैं एक इंसान से बात कर रहा हूँ?
     - आप कौन हैं?
     - ओर बताओ अपने बारे मेँ?
+
 - intent: iamabot_marathi
   examples: |
     - तू बॉट आहेस का?
@@ -157,153 +188,241 @@ nlu:
     - मी माणसाशी बोलतोय का?
     - तू कोण आहेस?
     - मला तुझ्याबद्दल सांग?
-- intent: iamabot_telugu
+
+- intent: iamabot_tamil
   examples: |
-    - నువ్వు బోట్వా?
-    - నువ్వు మనిషివా?
-    - నేను బోట్‌తో మాట్లాడుతున్నానా?
-    - నేను మనిషితో మాట్లాడుతున్నానా?
-    - నీవెవరు?
-    - నీ గురించి చెప్పు
+    - நீங்கள் ஒரு படகு?
+    - நீ ஒரு மனிதனா?
+    - நான் ஒரு போட் பேசுகிறேனா?
+    - நான் ஒரு மனிதனிடம் பேசுகிறேனா?
+    - யார் நீ?
+    - உங்களைப் பற்றி சொல்லுங்கள்
+
+- intent: iamabot_odia
+  examples: |
+    - ଆପଣ ଏକ ବଟ୍ କି?
+    - ତୁମେ ଜଣେ ମଣିଷ କି?
+    - ମୁଁ ଏକ ବଟ୍ ସହିତ କଥାବାର୍ତ୍ତା କରୁଛି କି?
+    - ମୁଁ କ a ଣସି ମଣିଷ ସହିତ କଥାବାର୍ତ୍ତା କରୁଛି କି?
+    - ତୁମେ କିଏ?
+    - ତୁମ ବିଷୟରେ କିଛି କହ?
+
 - intent: Thanks
   examples: |
     - Thanks
     - Thank You
     - thanks
-    - thanks a lot
+    - thanks a lot 
     - thank you so much
+
 - intent: Thanks_hindi
   examples: |
     - धन्यवाद
     - आपका धन्यवाद
-    - बहुत-बहुत धन्यवाद
+    - बहुत-बहुत धन्यवाद 
     - आपका बहुत-बहुत धन्यवाद
+
 - intent: Thanks_marathi
   examples: |
     - खूप धन्यवाद
     - खूप खूप धन्यवाद
-- intent: Thanks_telugu
+
+- intent: Thanks_tamil
   examples: |
-    - ధన్యవాదాలు
-    - చాలా ధన్యవాదాలు
+    - நன்றி
+    - நன்றி
+    - மிக்க நன்றி
+    - மிக்க நன்றி
+
+- intent: Thanks_odia
+  examples: |
+    - ଧନ୍ୟବାଦ
+    - ଧନ୍ୟବାଦ
+    - ଆପଣଙ୍କୁ ଅନେକ ଧନ୍ୟବାଦ
+    - ବହୁତ୍ ବହୁତ୍ ଧନ୍ୟବାଦ୍
+
 - intent: profile_menu
   examples: |
     - menu
     - Menu
     - profile menu
+
 - intent: profile_menu_hindi
   examples: |
     - मेन्यू
     - प्रोफ़ाइल मेनू
+
 - intent: profile_menu_marathi
   examples: |
     - प्रोफ़ाइल मेनू
-- intent: profile_menu_telugu
+
+- intent: profile_menu_tamil
   examples: |
-    - మెను
-    - ప్రొఫైల్ మెను
+    - பட்டியல்
+    - சுயவிவர மெனு
+
+- intent: profile_menu_odia
+  examples: |
+    - ମେନୁ
+    - ପ୍ରୋଫାଇଲ୍ ମେନୁ
+
 - intent: update_profile_picture
   examples: |
     - profile
     - Profile
     - update profile picture
+
 - intent: update_profile_picture_hindi
   examples: |
     - प्रोफ़ाइल
     - अद्यतन प्रोफ़ाइल चित्र
+
 - intent: update_profile_picture_marathi
   examples: |
     - प्रोफाइल चित्र अपडेट करा
-- intent: update_profile_picture_telugu
+
+- intent: update_profile_picture_tamil
   examples: |
-    - ప్రొఫైల్
-    - ప్రొఫైల్ చిత్రాన్ని నవీకరించండి
+    - சுயவிவரம்
+    - சுயவிவரப் படத்தைப் புதுப்பிக்கவும்
+
+- intent: update_profile_picture_odia
+  examples: |
+    - ପ୍ରୋଫାଇଲ୍
+    - ଅପଡେଟ୍ ପ୍ରୋଫାଇଲ୍ ଛବି
+
 - intent: update_mobile
   examples: |
     - mobile
     - Mobile
     - update mobile
+
 - intent: update_mobile_hindi
   examples: |
     - मोबाईल
     - मोबाइल अपडेट करें
+
 - intent: update_mobile_marathi
   examples: |
     - मोबाईल अपडेट करा
-- intent: update_mobile_telugu
+
+- intent: update_mobile_tamil
   examples: |
-    - మొబైల్
-    - మొబైల్ అప్‌డేట్ చేయండి
+    - கைபேசி
+    - மொபைலைப் புதுப்பிக்கவும்
+
+- intent: update_mobile_odia
+  examples: |
+    - ମୋବାଇଲ୍
+    - ମୋବାଇଲ୍ ଅପଡେଟ୍ କରନ୍ତୁ
+
 - intent: update_personal_details
   examples: |
     - personal details
     - Personal details
     - update personal details
+  
 - intent: update_personal_details_hindi
   examples: |
     - व्यक्तिगत विवरण
     - व्यक्तिगत विवरण अपडेट करें
+
 - intent: update_personal_details_marathi
   examples: |
     - वैयक्तिक माहिती
     - वैयक्तिक तपशील अद्यतनित करा
-- intent: update_personal_details_telugu
+
+- intent: update_personal_details_tamil
   examples: |
-    - వ్యక్తిగత వివరాలు
-    - వ్యక్తిగత వివరాలను నవీకరించండి
+    - சொந்த விவரங்கள்
+    - தனிப்பட்ட விவரங்களைப் புதுப்பிக்கவும்
+
+- intent: update_personal_details_odia
+  examples: |
+    - ବ୍ୟକ୍ତିଗତ ବିବରଣୀ
+    - ବ୍ୟକ୍ତିଗତ ବିବରଣୀ ଅଦ୍ୟତନ କରନ୍ତୁ
+
 - intent: certificates
   examples: |
     - certificates
     - Certificates
     - where to see the certificates?
+
 - intent: certificates_hindi
   examples: |
     - प्रमाण पत्र
     - प्रमाणपत्र कहां देखें?
+
 - intent: certificates_marathi
   examples: |
     - प्रमाणपत्रे
     - प्रमाणपत्रे कुठे पाहायची?
-- intent: certificates_telugu
+
+- intent: certificates_tamil
   examples: |
-    - సర్టిఫికెట్లు
-    - సర్టిఫికేట్లను ఎక్కడ చూడాలి?
+    - சான்றிதழ்கள்
+    - சான்றிதழ்களை எங்கே பார்ப்பது?
+
+- intent: certificates_odia
+  examples: |
+    - ପ୍ରମାଣପତ୍ର
+    - ସାର୍ଟିଫିକେଟ୍ କୁ କେଉଁଠାରେ ଦେଖିବା?
+
 - intent: password_menu
   examples: |
     - password
     - Password
     - password section
+
 - intent: password_menu_hindi
   examples: |
     - पासवर्ड
     - पासवर्ड अनुभाग
+
 - intent: password_menu_marathi
   examples: |
     - पासवर्ड विभाग
-- intent: password_menu_telugu
+
+- intent: password_menu_tamil
   examples: |
-    - పాస్వర్డ్
-    - పాస్వర్డ్ విభాగం
+    - கடவுச்சொல்
+    - கடவுச்சொல் பிரிவு
+
+- intent: password_menu_odia
+  examples: |
+    - ପାସୱାର୍ଡ
+    - ପାସୱାର୍ଡ ବିଭାଗ
+
 - intent: policy_menu
   examples: |
     - policy
     - terms of use
     - website policy
+
 - intent: policy_menu_hindi
   examples: |
     - नीति
     - उपयोग की शर्तें
     - वेबसाइट नीति
+
 - intent: policy_menu_marathi
   examples: |
     - धोरण
     - वापरण्याच्या अटी
     - वेबसाइट धोरण
-- intent: policy_menu_telugu
+
+- intent: policy_menu_tamil
   examples: |
-    - విధానం
-    - ఉపయోగ నిబంధనలు
-    - వెబ్‌సైట్ విధానం
+    - செயல்முறை
+    - பயன்பாட்டு விதிமுறைகளை
+    - இணையதளக் கொள்கை
+
+- intent: policy_menu_odia
+  examples: |
+    - ନୀତି
+    - ବ୍ୟବହାର ସର୍ତ୍ତାବଳୀ
+    - ୱେବସାଇଟ୍ ନୀତି
+
 - intent: out_of_scope
   examples: |
     - what is the square root of 5
@@ -333,14 +452,16 @@ nlu:
     - asdadsdadf
     - 999988777
     - hkgpjpopjpj
+
 - intent: out_of_scope_hindi
   examples: |
     - इस महीने की तारीख क्या है?
-    - मुझे इंग्लैंड घूमना है।
-    - आज मैंने एक अच्छी किताब पढ़ी।
-    - मुझे यह चीज़ खरीदनी है, कृपया मुझे इसकी कीमत बताएं।
+    - मुझे इंग्लैंड घूमना है। 
+    - आज मैंने एक अच्छी किताब पढ़ी। 
+    - मुझे यह चीज़ खरीदनी है, कृपया मुझे इसकी कीमत बताएं। 
     - हदअहफ़जकहजदफ़कजदशकफ़
     - १ २ ३ ४ ५
+
 - intent: out_of_scope_marathi
   examples: |
     - फुटबॉल च्या खेळात कशी जिंकणार?
@@ -349,13 +470,28 @@ nlu:
     - तुमचं नाव काय आहे? माझं नाव अमोल आहे.
     - एखाद्या साहित्य सम्मेलनाचा पुण्यात आयोजन झाला आहे, तुम्ही जाता का?
     - १ २ ३ ४ ५
-- intent: out_of_scope_telugu
+
+- intent: out_of_scope_tamil
   examples: |
-    - హదఅహఫ్జకహజద్ఫ్కజద్శకఫ్
-    - ౧ ౨ ౩ ౪ ౫
-- intent: dashboard
+    - ஹடஹஃஜகஹஜட்ஃகஜட்ஸகஃ
+    - ௧ ௨ ௩ ௪ ௫
+
+- intent: out_of_scope_odia
   examples: |
-    - dashboard
-- intent: home
-  examples: |
-    - home
+    - ୧ ୨ ୩ ୪ ୫
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,777 +1,965 @@
-version: '3.0'
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+version: "3.0"
+
 intents:
-- greet
-- goodbye
-- affirm
-- happy
-- mood_great
-- mood_unhappy
-- iamabot
-- profile_menu
-- update_profile_picture
-- update_mobile
-- update_personal_details
-- certificates
-- password_menu
-- policy_menu
-- Thanks
-- request_human
-- response_back
-- out_of_scope
-- english
-- hindi
-- marathi
-- telugu
-- profile_menu_hindi
-- profile_menu_marathi
-- profile_menu_telugu
-- update_profile_picture_hindi
-- update_profile_picture_marathi
-- update_profile_picture_telugu
-- update_mobile_hindi
-- update_mobile_marathi
-- update_mobile_telugu
-- update_personal_details_hindi
-- update_personal_details_marathi
-- update_personal_details_telugu
-- certificates_hindi
-- certificates_marathi
-- certificates_telugu
-- password_menu_hindi
-- password_menu_marathi
-- password_menu_telugu
-- policy_menu_hindi
-- policy_menu_marathi
-- policy_menu_telugu
-- happy_hindi
-- happy_marathi
-- happy_telugu
-- affirm_hindi
-- affirm_marathi
-- affirm_telugu
-- goodbye_hindi
-- goodbye_marathi
-- goodbye_telugu
-- iamabot_hindi
-- iamabot_marathi
-- iamabot_telugu
-- Thanks_hindi
-- Thanks_marathi
-- Thanks_telugu
-- out_of_scope_hindi
-- out_of_scope_marathi
-- out_of_scope_telugu
-- deny
-- dashboard
-- home
+  - greet
+  - goodbye
+  - affirm
+  - happy
+  - mood_great
+  - mood_unhappy
+  - iamabot
+  - profile_menu
+  - update_profile_picture
+  - update_mobile
+  - update_personal_details
+  - certificates
+  - password_menu
+  - policy_menu
+  - Thanks
+  - request_human
+  - response_back
+  - out_of_scope
+  - english
+  - hindi
+  - marathi
+  - tamil
+  - odia
+  - profile_menu_hindi
+  - profile_menu_marathi
+  - profile_menu_tamil
+  - profile_menu_odia
+  - update_profile_picture_hindi
+  - update_profile_picture_marathi
+  - update_profile_picture_tamil
+  - update_profile_picture_odia
+  - update_mobile_hindi
+  - update_mobile_marathi
+  - update_mobile_tamil
+  - update_mobile_odia
+  - update_personal_details_hindi
+  - update_personal_details_marathi
+  - update_personal_details_tamil
+  - update_personal_details_odia
+  - certificates_hindi
+  - certificates_marathi
+  - certificates_tamil
+  - certificates_odia
+  - password_menu_hindi
+  - password_menu_marathi
+  - password_menu_tamil
+  - password_menu_odia
+  - policy_menu_hindi
+  - policy_menu_marathi
+  - policy_menu_tamil
+  - policy_menu_odia
+  - happy_hindi
+  - happy_marathi
+  - happy_tamil
+  - happy_odia
+  - affirm_hindi
+  - affirm_marathi
+  - affirm_tamil
+  - affirm_odia
+  - goodbye_hindi
+  - goodbye_marathi
+  - goodbye_tamil
+  - goodbye_odia
+  - iamabot_hindi
+  - iamabot_marathi
+  - iamabot_tamil
+  - iamabot_odia
+  - Thanks_hindi
+  - Thanks_marathi
+  - Thanks_tamil
+  - Thanks_odia
+  - out_of_scope_hindi
+  - out_of_scope_marathi
+  - out_of_scope_tamil
+  - out_of_scope_odia
+
+actions:
+  - action_hello_world_action_test
+  - action_greet
+  - action_html_entity_encode
+
 entities:
-- name
-- state
+  - name
+  - state
+
 slots:
   name:
     type: text
-    influence_conversation: true
     mappings:
-    - type: from_entity
-      entity: name
+      - type: from_entity
+        entity: name
+
   state:
     type: text
-    influence_conversation: true
     mappings:
-    - type: from_entity
-      entity: state
+      - type: from_entity
+        entity: state
+
 responses:
   utter_greet:
-  - buttons:
-    - payload: /english
-      title: English
-    - payload: /hindi
-      title: हिंदी
-    - payload: /marathi
-      title: मराठी
-    - payload: /telugu
-      title: तेलुगु
-    text: Hi, I'm your personal Rise Assistant, Please choose a language you want to continue with.
+  - text: "Hi, I'm your personal Rise Assistant, Please choose a language you want to continue with."
+    buttons:
+    - title: "English"
+      payload: "/english"
+    - title: "हिंदी"
+      payload: "/hindi"
+    - title: "मराठी"
+      payload: "/marathi"
+    - title: "தமிழ்"
+      payload: "/tamil"
+    - title: "ଓଡ଼ିଆ"
+      payload: "/odia"
+
   utter_english:
-  - buttons:
-    - payload: /profile_menu
-      title: I want to update profile details
-    - payload: /certificates
-      title: I want to see my certificates
-    - payload: /password_menu
-      title: I want to change my current password
-    - payload: /policy_menu
-      title: I want to know the website policy and terms of use
-    text: Please choose an option to proceed
+  - text: "Please choose an option to proceed"
+    buttons:
+    - title: "I want to update profile details"
+      payload: "/profile_menu"
+    - title: "I want to see my certificates"
+      payload: "/certificates"
+    - title: "I want to change my current password"
+      payload: "/password_menu"
+    - title: "I want to know the website policy and terms of use"
+      payload: "/policy_menu"
+
   utter_hindi:
-  - buttons:
-    - payload: /profile_menu_hindi
-      title: मैं प्रोफ़ाइल विवरण अपडेट करना चाहता/चाहती हूं
-    - payload: /certificates_hindi
-      title: मैं अपने प्रमाणपत्र देखना चाहता हूं
-    - payload: /password_menu_hindi
-      title: मैं अपना वर्तमान पासवर्ड बदलना चाहता हूं
-    - payload: /policy_menu_hindi
-      title: मैं वेबसाइट नीति और उपयोग की शर्तें जानना चाहता हूं
-    text: कृपया आगे बढ़ने के लिए कोई विकल्प चुनें
+  - text: "कृपया आगे बढ़ने के लिए कोई विकल्प चुनें"
+    buttons:
+    - title: "मैं प्रोफ़ाइल विवरण अपडेट करना चाहता/चाहती हूं"
+      payload: "/profile_menu_hindi"
+    - title: "मैं अपने प्रमाणपत्र देखना चाहता हूं"
+      payload: "/certificates_hindi"
+    - title: "मैं अपना वर्तमान पासवर्ड बदलना चाहता हूं"
+      payload: "/password_menu_hindi"
+    - title: "मैं वेबसाइट नीति और उपयोग की शर्तें जानना चाहता हूं"
+      payload: "/policy_menu_hindi"
+
   utter_marathi:
-  - buttons:
-    - payload: /profile_menu_marathi
-      title: मला प्रोफाइल तपशील अपडेट करायचे आहेत
-    - payload: /certificates_marathi
-      title: मला माझी प्रमाणपत्रे पहायची आहेत
-    - payload: /password_menu_marathi
-      title: मला माझा वर्तमान पासवर्ड बदलायचा आहे
-    - payload: /policy_menu_marathi
-      title: मला वेबसाइट धोरण आणि वापराच्या अटी जाणून घ्यायच्या आहेत
-    text: कृपया पुढे जाण्यासाठी एक पर्याय निवडा
-  utter_telugu:
-  - buttons:
-    - payload: /profile_menu_telugu
-      title: నేను ప్రొఫైల్ వివరాలను అప్‌డేట్ చేయాలనుకుంటున్నాను
-    - payload: /certificates_telugu
-      title: నేను నా సర్టిఫికేట్‌లను చూడాలనుకుంటున్నాను
-    - payload: /password_menu_telugu
-      title: నేను నా ప్రస్తుత పాస్‌వర్డ్‌ని మార్చాలనుకుంటున్నాను
-    - payload: /policy_menu_telugu
-      title: నేను వెబ్‌సైట్ విధానం మరియు ఉపయోగ నిబంధనలను తెలుసుకోవాలనుకుంటున్నాను
-    text: దయచేసి కొనసాగడానికి ఒక ఎంపికను ఎంచుకోండి
+  - text: "कृपया पुढे जाण्यासाठी एक पर्याय निवडा"
+    buttons:
+    - title: "मला प्रोफाइल तपशील अपडेट करायचे आहेत"
+      payload: "/profile_menu_marathi"
+    - title: "मला माझी प्रमाणपत्रे पहायची आहेत"
+      payload: "/certificates_marathi"
+    - title: "मला माझा वर्तमान पासवर्ड बदलायचा आहे"
+      payload: "/password_menu_marathi"
+    - title: "मला वेबसाइट धोरण आणि वापराच्या अटी जाणून घ्यायच्या आहेत"
+      payload: "/policy_menu_marathi"
+
+  utter_tamil:
+  - text: "தொடர விருப்பத்தைத் தேர்வு செய்யவும்"
+    buttons:
+    - title: "சுயவிவர விவரங்களை புதுப்பிக்க விரும்புகிறேன்"
+      payload: "/profile_menu_tamil"
+    - title: "எனது சான்றிதழ்களைப் பார்க்க வேண்டும்"
+      payload: "/certificates_tamil"
+    - title: "எனது தற்போதைய கடவுச்சொல்லை மாற்ற விரும்புகிறேன்"
+      payload: "/password_menu_tamil"
+    - title: "இணையதளக் கொள்கை மற்றும் பயன்பாட்டு விதிமுறைகளை அறிய விரும்புகிறேன்"
+      payload: "/policy_menu_tamil"
+
+  utter_odia:
+  - text: "ଜାରି ରଖିବାକୁ ବିକଳ୍ପ ବାଛନ୍ତୁ"
+    buttons:
+    - title: "ମୁଁ ପ୍ରୋଫାଇଲ୍ ବିବରଣୀ ଅପଡେଟ୍ କରିବାକୁ ଚାହୁଁଛି "
+      payload: "/profile_menu_odia"
+    - title: "ମୁଁ ମୋର ସାର୍ଟିଫିକେଟ୍ ଦେଖିବାକୁ ଚାହୁଁଛି"
+      payload: "/certificates_odia"
+    - title: "ମୁଁ ମୋର ସାମ୍ପ୍ରତିକ ପାସୱାର୍ଡ ପରିବର୍ତ୍ତନ କରିବାକୁ ଚାହୁଁଛି"
+      payload: "/password_menu_odia"
+    - title: "ମୁଁ ୱେବସାଇଟ୍ ନୀତି ଏବଂ ବ୍ୟବହାର ସର୍ତ୍ତାବଳୀ ଜାଣିବାକୁ ଚାହେଁ"
+      payload: "/policy_menu_odia"
+
+
   utter_profile_menu:
-  - buttons:
-    - payload: /update_profile_picture
-      title: I want to add/update my profile picture
-    - payload: /update_mobile
-      title: I want to update my mobile number
-    - payload: /update_personal_details
-      title: I want to add/update my date of birth/email
-    - payload: /dashboard
-      title: I want to see dashboard
-    - payload: /home
-      title: I want to see home page
-    text: Please select your issue from below option
+  - text: "Please select your issue from below option"
+    buttons:
+    - title: "I want to add/update my profile picture"
+      payload: "/update_profile_picture"
+    - title: "I want to update my mobile number"
+      payload: "/update_mobile"
+    - title: "I want to add/update my date of birth/email"
+      payload: "/update_personal_details"
+
   utter_profile_menu_hindi:
-  - buttons:
-    - payload: /update_profile_picture_hindi
-      title: मैं अपना प्रोफ़ाइल चित्र जोड़ना/अपडेट करना चाहता/चाहती हूं
-    - payload: /update_mobile_hindi
-      title: मैं अपना मोबाइल नंबर अपडेट करना चाहता हूं
-    - payload: /update_personal_details_hindi
-      title: मैं अपनी जन्मतिथि/ईमेल जोड़ना/अपडेट करना चाहता हूं
-    text: कृपया नीचे दिए गए विकल्पों में से अपनी समस्या का चयन करें
+  - text: "कृपया नीचे दिए गए विकल्पों में से अपनी समस्या का चयन करें"
+    buttons:
+    - title: "मैं अपना प्रोफ़ाइल चित्र जोड़ना/अपडेट करना चाहता/चाहती हूं"
+      payload: "/update_profile_picture_hindi"
+    - title: "मैं अपना मोबाइल नंबर अपडेट करना चाहता हूं"
+      payload: "/update_mobile_hindi"
+    - title: "मैं अपनी जन्मतिथि/ईमेल जोड़ना/अपडेट करना चाहता हूं"
+      payload: "/update_personal_details_hindi"
+
   utter_profile_menu_marathi:
-  - buttons:
-    - payload: /update_profile_picture_marathi
-      title: मला माझे प्रोफाइल चित्र जोडायचे/अपडेट करायचे आहे
-    - payload: /update_mobile_marathi
-      title: मला माझा मोबाईल नंबर अपडेट करायचा आहे
-    - payload: /update_personal_details_marathi
-      title: मला माझी जन्मतारीख/ईमेल जोड/अपडेट करायचे आहे
-    text: कृपया खालील पर्यायातून तुमची समस्या निवडा
-  utter_profile_menu_telugu:
-  - buttons:
-    - payload: /update_profile_picture_telugu
-      title: నేను నా ప్రొఫైల్ చిత్రాన్ని జోడించాలనుకుంటున్నాను/నవీకరించాలనుకుంటున్నాను
-    - payload: /update_mobile_telugu
-      title: నేను నా మొబైల్ నంబర్‌ని అప్‌డేట్ చేయాలనుకుంటున్నాను
-    - payload: /update_personal_details_telugu
-      title: నేను నా పుట్టిన తేదీ/ఇమెయిల్‌ని జోడించాలనుకుంటున్నాను/నవీకరించాలనుకుంటున్నాను
-    text: దయచేసి దిగువ ఎంపిక నుండి మీ సమస్యను ఎంచుకోండి
+  - text: "कृपया खालील पर्यायातून तुमची समस्या निवडा"
+    buttons:
+    - title: "मला माझे प्रोफाइल चित्र जोडायचे/अपडेट करायचे आहे"
+      payload: "/update_profile_picture_marathi"
+    - title: "मला माझा मोबाईल नंबर अपडेट करायचा आहे"
+      payload: "/update_mobile_marathi"
+    - title: "मला माझी जन्मतारीख/ईमेल जोड/अपडेट करायचे आहे"
+      payload: "/update_personal_details_marathi"
+
+  utter_profile_menu_tamil:
+  - text: "கீழே உள்ள விருப்பத்திலிருந்து உங்கள் சிக்கலைத் தேர்ந்தெடுக்கவும்"
+    buttons:
+    - title: "எனது சுயவிவரப் படத்தைச் சேர்க்க/புதுப்பிக்க விரும்புகிறேன்"
+      payload: "/update_profile_picture_tamil"
+    - title: "எனது மொபைல் எண்ணைப் புதுப்பிக்க விரும்புகிறேன்"
+      payload: "/update_mobile_tamil"
+    - title: "எனது பிறந்த தேதி/மின்னஞ்சலைச் சேர்க்க/அப்டேட் செய்ய விரும்புகிறேன்"
+      payload: "/update_personal_details_tamil"
+
+  utter_profile_menu_odia:
+  - text: "ନିମ୍ନରେ ଥିବା ବିକଳ୍ପରୁ ଆପଣଙ୍କର ସମସ୍ୟା ଚୟନ କରନ୍ତୁ"
+    buttons:
+    - title: "ମୁଁ ମୋର ପ୍ରୋଫାଇଲ୍ ଛବି ଯୋଡିବାକୁ / ଅପଡେଟ୍ କରିବାକୁ ଚାହେଁ"
+      payload: "/update_profile_picture_odia"
+    - title: "ମୁଁ ମୋ ମୋବାଇଲ୍ ନମ୍ବର ଅପଡେଟ୍ କରିବାକୁ ଚାହୁଁଛି"
+      payload: "/update_mobile_odia"
+    - title: "ମୁଁ ମୋର ଜନ୍ମ ତାରିଖ / ଇମେଲ୍ ଯୋଡିବାକୁ / ଅପଡେଟ୍ କରିବାକୁ ଚାହେଁ "
+      payload: "/update_personal_details_odia"
+
   utter_update_profile_picture:
-  - text: |-
-      We'd like to lend a hand please follow the below mentioned steps: 
-       
-       &#x2022; Click on the user icon at upper right corner
-       
-       &#x2022; Choose profile from the dropdown menu and you will be redirected to user profile page
-       
-       &#x2022; Click on Display picture and browse any image you want to set as profile picture
-       
-       &#x2022; Your changes will be saved!
-       
-       [Go to Profile](https://rise.edx.dev.drcsystems.ooo/profile/)
-  - channel: myio
-    custom:
-      buttons:
-      - title: Go to Profile
-        type: '1'
+  - text: "We'd like to lend a hand please follow the below mentioned steps: \n
+      \n
+      &#x2022; Click on the user icon at upper right corner\n
+      \n
+      &#x2022; Choose profile from the dropdown menu and you will be redirected to user profile page\n
+      \n
+      &#x2022; Click on Display picture and browse any image you want to set as profile picture\n
+      \n
+      &#x2022; Your changes will be saved!\n
+      \n
+      [Go to Profile](https://rise.edx.dev.drcsystems.ooo/profile/)"
+  - custom:
       text: "We'd like to lend a hand please follow the below mentioned steps: <br> &#x2022; Click on the user icon at upper right corner <br> &#x2022; Choose profile from the dropdown menu and you will be redirected to user profile page <br> &#x2022; Click on Display picture and browse any image you want to set as profile picture <br> &#x2022; Your changes will be saved!"
+      buttons:
+        - title: "Go to Profile"
+          type: "1"
+    channel: "myio"
+
   utter_update_profile_picture_hindi:
-  - text: |-
-      हम आपकी मदद करना चाहते हैं कृपया नीचे दिए गए चरणों का पालन करें: 
-       
-       &#x2022; ऊपरी दाएं कोने में उपयोगकर्ता आइकन पर क्लिक करें
-       
-       &#x2022; ड्रॉपडाउन मेनू से प्रोफ़ाइल चुनें और आपको उपयोगकर्ता प्रोफ़ाइल पृष्ठ पर रीडायरेक्ट कर दिया जाएगा
-       
-       &#x2022; डिस्प्ले पिक्चर पर क्लिक करें और किसी भी इमेज को ब्राउज करें जिसे आप प्रोफाइल पिक्चर के रूप में सेट करना चाहते हैं
-       
-       &#x2022; आपके परिवर्तन सहेजे जाएंगे!
-       
-       [प्रोफाइल सेक्शन में जाएं](https://rise.edx.dev.drcsystems.ooo/profile/)
-  - channel: myio
-    custom:
+  - text: "हम आपकी मदद करना चाहते हैं कृपया नीचे दिए गए चरणों का पालन करें: \n
+      \n
+      &#x2022; ऊपरी दाएं कोने में उपयोगकर्ता आइकन पर क्लिक करें\n
+      \n
+      &#x2022; ड्रॉपडाउन मेनू से प्रोफ़ाइल चुनें और आपको उपयोगकर्ता प्रोफ़ाइल पृष्ठ पर रीडायरेक्ट कर दिया जाएगा\n
+      \n
+      &#x2022; डिस्प्ले पिक्चर पर क्लिक करें और किसी भी इमेज को ब्राउज करें जिसे आप प्रोफाइल पिक्चर के रूप में सेट करना चाहते हैं\n
+      \n
+      &#x2022; आपके परिवर्तन सहेजे जाएंगे!\n
+      \n
+      [प्रोफाइल सेक्शन में जाएं](https://rise.edx.dev.drcsystems.ooo/profile/)"
+  - custom:
+      text: "हम आपकी मदद करना चाहते हैं कृपया नीचे दिए गए चरणों का पालन करें: <br> &#x2022; ऊपरी दाएं कोने में उपयोगकर्ता आइकन पर क्लिक करें <br> &#x2022; ड्रॉपडाउन मेनू से प्रोफ़ाइल चुनें और आपको उपयोगकर्ता प्रोफ़ाइल पृष्ठ पर रीडायरेक्ट कर दिया जाएगा <br> &#x2022; डिस्प्ले पिक्चर पर क्लिक करें और किसी भी इमेज को ब्राउज करें जिसे आप प्रोफाइल पिक्चर के रूप में सेट करना चाहते हैं <br> &#x2022; आपके परिवर्तन सहेजे जाएंगे!"
       buttons:
-      - title: प्रोफाइल सेक्शन में जाएं
-        type: '1'
-      text: 'हम आपकी मदद करना चाहते हैं कृपया नीचे दिए गए चरणों का पालन करें: <br> &#x2022; ऊपरी दाएं कोने में उपयोगकर्ता आइकन पर क्लिक करें <br> &#x2022; ड्रॉपडाउन मेनू से प्रोफ़ाइल चुनें और आपको उपयोगकर्ता प्रोफ़ाइल पृष्ठ पर रीडायरेक्ट कर दिया जाएगा <br> &#x2022; डिस्प्ले पिक्चर पर क्लिक करें और किसी भी इमेज को ब्राउज करें जिसे आप प्रोफाइल पिक्चर के रूप में सेट करना चाहते हैं <br> &#x2022; आपके परिवर्तन सहेजे जाएंगे!'
+        - title: "प्रोफाइल सेक्शन में जाएं"
+          type: "1"
+    channel: "myio"
+
   utter_update_profile_picture_marathi:
-  - text: |-
-      आम्ही मदत करू इच्छितो, कृपया खाली नमूद केलेल्या चरणांचे अनुसरण करा: 
-       
-       &#x2022; वरच्या उजव्या कोपर्यात वापरकर्ता चिन्हावर क्लिक करा
-       
-       &#x2022; ड्रॉपडाउन मेनूमधून प्रोफाइल निवडा आणि तुम्हाला वापरकर्ता प्रोफाइल पृष्ठावर पुनर्निर्देशित केले जाईल
-       
-       &#x2022; डिस्प्ले पिक्चरवर क्लिक करा आणि तुम्हाला प्रोफाइल पिक्चर म्हणून सेट करायची असलेली कोणतीही इमेज ब्राउझ करा
-       
-       &#x2022; तुमचे बदल जतन केले जातील!
-       
-       [प्रोफाइल विभागात जा](https://rise.edx.dev.drcsystems.ooo/profile/)
-  - channel: myio
-    custom:
+  - text: "आम्ही मदत करू इच्छितो, कृपया खाली नमूद केलेल्या चरणांचे अनुसरण करा: \n
+      \n
+      &#x2022; वरच्या उजव्या कोपर्यात वापरकर्ता चिन्हावर क्लिक करा\n
+      \n
+      &#x2022; ड्रॉपडाउन मेनूमधून प्रोफाइल निवडा आणि तुम्हाला वापरकर्ता प्रोफाइल पृष्ठावर पुनर्निर्देशित केले जाईल\n
+      \n
+      &#x2022; डिस्प्ले पिक्चरवर क्लिक करा आणि तुम्हाला प्रोफाइल पिक्चर म्हणून सेट करायची असलेली कोणतीही इमेज ब्राउझ करा\n
+      \n
+      &#x2022; तुमचे बदल जतन केले जातील!\n
+      \n
+      [प्रोफाइल विभागात जा](https://rise.edx.dev.drcsystems.ooo/profile/)"
+  - custom:
+      text: "आम्ही मदत करू इच्छितो, कृपया खाली नमूद केलेल्या चरणांचे अनुसरण करा: <br> &#x2022; वरच्या उजव्या कोपर्यात वापरकर्ता चिन्हावर क्लिक करा <br> &#x2022; ड्रॉपडाउन मेनूमधून प्रोफाइल निवडा आणि तुम्हाला वापरकर्ता प्रोफाइल पृष्ठावर पुनर्निर्देशित केले जाईल <br> &#x2022; डिस्प्ले पिक्चरवर क्लिक करा आणि तुम्हाला प्रोफाइल पिक्चर म्हणून सेट करायची असलेली कोणतीही इमेज ब्राउझ करा <br> &#x2022; तुमचे बदल जतन केले जातील!"
       buttons:
-      - title: प्रोफाइल विभागात जा
-        type: '1'
-      text: 'आम्ही मदत करू इच्छितो, कृपया खाली नमूद केलेल्या चरणांचे अनुसरण करा: <br> &#x2022; वरच्या उजव्या कोपर्यात वापरकर्ता चिन्हावर क्लिक करा <br> &#x2022; ड्रॉपडाउन मेनूमधून प्रोफाइल निवडा आणि तुम्हाला वापरकर्ता प्रोफाइल पृष्ठावर पुनर्निर्देशित केले जाईल <br> &#x2022; डिस्प्ले पिक्चरवर क्लिक करा आणि तुम्हाला प्रोफाइल पिक्चर म्हणून सेट करायची असलेली कोणतीही इमेज ब्राउझ करा <br> &#x2022; तुमचे बदल जतन केले जातील!'
-  utter_update_profile_picture_telugu:
-  - text: |-
-      మేము సహాయం చేయాలనుకుంటున్నాము, దయచేసి దిగువ పేర్కొన్న దశలను అనుసరించండి: 
-       
-       &#x2022; ఎగువ కుడి మూలలో ఉన్న వినియోగదారు చిహ్నంపై క్లిక్ చేయండి
-       
-       &#x2022; డ్రాప్‌డౌన్ మెను నుండి ప్రొఫైల్‌ని ఎంచుకోండి మరియు మీరు వినియోగదారు ప్రొఫైల్ పేజీకి మళ్లించబడతారు
-       
-       &#x2022; డిస్‌ప్లే పిక్చర్‌పై క్లిక్ చేసి, మీరు ప్రొఫైల్ పిక్చర్‌గా సెట్ చేయాలనుకుంటున్న ఏదైనా చిత్రాన్ని బ్రౌజ్ చేయండి
-       
-       &#x2022; మీ మార్పులు సేవ్ చేయబడతాయి!
-       
-       [ప్రొఫైల్ విభాగానికి వెళ్లండి](https://rise.edx.dev.drcsystems.ooo/profile/)
-  - channel: myio
-    custom:
+        - title: "प्रोफाइल विभागात जा"
+          type: "1"
+    channel: "myio"
+
+  utter_update_profile_picture_tamil:
+  - text: "நாங்கள் கைகொடுக்க விரும்புகிறோம், கீழே குறிப்பிடப்பட்டுள்ள படிகளைப் பின்பற்றவும்: \n
+      \n
+      &#x2022; மேல் வலது மூலையில் உள்ள பயனர் ஐகானைக் கிளிக் செய்யவும்\n
+      \n
+      &#x2022; கீழ்தோன்றும் மெனுவிலிருந்து சுயவிவரத்தைத் தேர்ந்தெடுக்கவும், நீங்கள் பயனர் சுயவிவரப் பக்கத்திற்குத் திருப்பி விடப்படுவீர்கள்\n
+      \n
+      &#x2022; காட்சிப் படத்தைக் கிளிக் செய்து, சுயவிவரப் படமாக நீங்கள் அமைக்க விரும்பும் எந்தப் படத்தையும் உலாவவும்\n
+      \n
+      &#x2022; உங்கள் மாற்றங்கள் சேமிக்கப்படும்!\n
+      \n
+      [சுயவிவரத்திற்குச் செல்லவும்](https://rise.edx.dev.drcsystems.ooo/profile/)"
+  - custom:
+      text: "நாங்கள் கைகொடுக்க விரும்புகிறோம், கீழே குறிப்பிடப்பட்டுள்ள படிகளைப் பின்பற்றவும்: <br> &#x2022; மேல் வலது மூலையில் உள்ள பயனர் ஐகானை கிளிக் செய்யவும் <br> &#x2022; கீழ்தோன்றும் மெனுவிலிருந்து சுயவிவரத்தைத் தேர்வுசெய்யவும், நீங்கள் பயனர் சுயவிவரப் பக்கத்திற்கு திருப்பி விடப்படுவீர்கள் <br> &#x2022; காட்சிப் படத்தைக் கிளிக் செய்து, சுயவிவரப் படமாக நீங்கள் அமைக்க விரும்பும் எந்தப் படத்தையும் உலாவவும் <br> &#x2022; உங்கள் மாற்றங்கள் சேமிக்கப்படும்!"
       buttons:
-      - title: ప్రొఫైల్ విభాగానికి వెళ్లండి
-        type: '1'
-      text: 'మేము సహాయం చేయాలనుకుంటున్నాము, దయచేసి దిగువ పేర్కొన్న దశలను అనుసరించండి: <br> &#x2022; ఎగువ కుడి మూలలో ఉన్న వినియోగదారు చిహ్నంపై క్లిక్ చేయండి <br> &#x2022; డ్రాప్‌డౌన్ మెను నుండి ప్రొఫైల్‌ని ఎంచుకోండి మరియు మీరు వినియోగదారు ప్రొఫైల్ పేజీకి మళ్లించబడతారు <br> &#x2022; డిస్‌ప్లే పిక్చర్‌పై క్లిక్ చేసి, మీరు ప్రొఫైల్ పిక్చర్‌గా సెట్ చేయాలనుకుంటున్న ఏదైనా చిత్రాన్ని బ్రౌజ్ చేయండి <br> &#x2022; మీ మార్పులు సేవ్ చేయబడతాయి!'
+        - title: "சுயவிவரத்திற்குச் செல்லவும்"
+          type: "1"
+    channel: "myio"
+
+  utter_update_profile_picture_odia:
+  - text: "ଆମେ ଏକ ହାତ ଦେଇବୁ, ଦୟାକରି ନୀଚେ ଉଲ୍ଲେଖିତ ପଥରେ ଅନୁସରଣ କରନ୍ତୁ: \n
+      \n
+      &#x2022; ଉପରେ ଡାହରା କୋଣାରେ ବର୍ତ୍ତମାନ ଅବସ୍ଥା ଚିହ୍ନରେ କ୍ଲିକ୍ କରନ୍ତୁ\n
+      \n
+      &#x2022; ଡ୍ରପଡାଉନ୍ ମେନୁ ରୁ 'ପ୍ରୋଫାଇଲ' ବାଛନ୍ତୁ ଏବଂ ତୁମେ ବ୍ୟବହାରକାରୀ ପ୍ରଦର୍ଶନ ପୃଷ୍ଠାରେ ପୁଣିଥିବେ\n
+      \n
+      &#x2022; 'ଡିସ୍‌ପ୍ଲେ ଚିତ୍ର' ରେ କ୍ଲିକ୍ କରନ୍ତୁ ଏବଂ ଆପଣ ପ୍ରୋଫାଇଲ ଛବି ସେଟ୍ କରିବା ଇଚ୍ଛୁଅଛନ୍ତି\n
+      \n
+      &#x2022; ଆପଣଙ୍କର ପରିବର୍ତ୍ତନ ସଂରକ୍ଷିତ ହେବ!\n
+      \n
+      [ପ୍ରୋଫାଇଲକୁ ଯାଉନ୍ତୁ](https://rise.edx.dev.drcsystems.ooo/profile/)"
+  - custom:
+      text: "ଆମେ ଏକ ହାତ ଦେଇବୁ, ଦୟାକରି ନୀଚେ ଉଲ୍ଲେଖିତ ପଥରେ ଅନୁସରଣ କରନ୍ତୁ: <br> &#x2022; ଉପରେ ଡାହରା କୋଣାରେ ବର୍ତ୍ତମାନ ଅବସ୍ଥା ଚିହ୍ନରେ କ୍ଲିକ୍ କରନ୍ତୁ <br> &#x2022; ଡ୍ରପଡାଉନ୍ ମେନୁ ରୁ 'ପ୍ରୋଫାଇଲ' ବାଛନ୍ତୁ ଏବଂ ତୁମେ ବ୍ୟବହାରକାରୀ ପ୍ରଦର୍ଶନ ପୃଷ୍ଠାରେ ପୁଣିଥିବେ <br> &#x2022; 'ଡିସ୍‌ପ୍ଲେ ଚିତ୍ର' ରେ କ୍ଲିକ୍ କରନ୍ତୁ ଏବଂ ଆପଣ ପ୍ରୋଫାଇଲ ଛବି ସେଟ୍ କରିବା ଇଚ୍ଛୁଅଛନ୍ତି <br> &#x2022; ଆପଣଙ୍କର ପରିବର୍ତ୍ତନ ସଂରକ୍ଷିତ ହେବ!"
+      buttons:
+        - title: "ପ୍ରୋଫାଇଲକୁ ଯାଉନ୍ତୁ"
+          type: "1"
+    channel: "myio"
+  
   utter_update_mobile:
-  - text: |-
-      We'd like to lend a hand please follow the below mentioned steps: 
-       
-       &#x2022; Click on the user icon at upper right corner
-       
-       &#x2022; Choose account from the dropdown menu and you will be redirected to account setting page
-       
-       &#x2022; Click on update mobile number and enter your new mobile number then click on sent OTP
-       
-       &#x2022; OTP will be sent to your new mobile number which you can enter in the OTP field
-       
-       &#x2022; Your mobile number will be updated!
-       
-       [Go to update mobile](https://rise.edx.dev.drcsystems.ooo/change_mobile/)
-  - channel: myio
-    custom:
-      buttons:
-      - title: Go to update mobile
-        type: '2'
+  - text: "We'd like to lend a hand please follow the below mentioned steps: \n
+      \n
+      &#x2022; Click on the user icon at upper right corner\n
+      \n
+      &#x2022; Choose account from the dropdown menu and you will be redirected to account setting page\n
+      \n
+      &#x2022; Click on update mobile number and enter your new mobile number then click on sent OTP\n
+      \n
+      &#x2022; OTP will be sent to your new mobile number which you can enter in the OTP field\n
+      \n
+      &#x2022; Your mobile number will be updated!\n
+      \n
+      [Go to update mobile](https://rise.edx.dev.drcsystems.ooo/change_mobile/)"
+
+  - custom:
       text: "We'd like to lend a hand please follow the below mentioned steps: <br> &#x2022; Click on the user icon at upper right corner <br> &#x2022; Choose account from the dropdown menu and you will be redirected to account setting page <br> &#x2022; Click on update mobile number and enter your new mobile number then click on sent OTP <br> &#x2022; OTP will be sent to your new mobile number which you can enter in the OTP field <br> &#x2022; Your mobile number will be updated!"
+      buttons:
+        - title: "Go to update mobile"
+          type: "2"
+    channel: "myio"
+
   utter_update_mobile_hindi:
-  - text: |-
-      हम आपकी मदद करना चाहते हैं कृपया नीचे दिए गए चरणों का पालन करें: 
-       
-       &#x2022; ऊपरी दाएं कोने में उपयोगकर्ता आइकन पर क्लिक करें
-       
-       &#x2022; ड्रॉपडाउन मेनू से खाता चुनें और आपको खाता सेटिंग पृष्ठ पर रीडायरेक्ट कर दिया जाएगा
-       
-       &#x2022; अपडेट मोबाइल नंबर पर क्लिक करें और अपना नया मोबाइल नंबर दर्ज करें फिर भेजे गए ओटीपी पर क्लिक करें
-       
-       &#x2022; आपके नए मोबाइल नंबर पर ओटीपी भेजा जाएगा जिसे आप ओटीपी फील्ड में दर्ज कर सकते हैं
-       
-       &#x2022; आपका मोबाइल नंबर अपडेट कर दिया जाएगा!
-       
-       [मोबाइल अपडेट करने के लिए जाएं](https://rise.edx.dev.drcsystems.ooo/change_mobile/)
-  - channel: myio
-    custom:
+  - text: "हम आपकी मदद करना चाहते हैं कृपया नीचे दिए गए चरणों का पालन करें: \n
+      \n
+      &#x2022; ऊपरी दाएं कोने में उपयोगकर्ता आइकन पर क्लिक करें\n
+      \n
+      &#x2022; ड्रॉपडाउन मेनू से खाता चुनें और आपको खाता सेटिंग पृष्ठ पर रीडायरेक्ट कर दिया जाएगा\n
+      \n
+      &#x2022; अपडेट मोबाइल नंबर पर क्लिक करें और अपना नया मोबाइल नंबर दर्ज करें फिर भेजे गए ओटीपी पर क्लिक करें\n
+      \n
+      &#x2022; आपके नए मोबाइल नंबर पर ओटीपी भेजा जाएगा जिसे आप ओटीपी फील्ड में दर्ज कर सकते हैं\n
+      \n
+      &#x2022; आपका मोबाइल नंबर अपडेट कर दिया जाएगा!\n
+      \n
+      [मोबाइल अपडेट करने के लिए जाएं](https://rise.edx.dev.drcsystems.ooo/change_mobile/)"
+
+  - custom:
+      text: "हम आपकी मदद करना चाहते हैं कृपया नीचे दिए गए चरणों का पालन करें: <br> &#x2022; ऊपरी दाएं कोने में उपयोगकर्ता आइकन पर क्लिक करें <br> &#x2022; ड्रॉपडाउन मेनू से खाता चुनें और आपको खाता सेटिंग पृष्ठ पर रीडायरेक्ट कर दिया जाएगा <br> &#x2022; अपडेट मोबाइल नंबर पर क्लिक करें और अपना नया मोबाइल नंबर दर्ज करें फिर भेजे गए ओटीपी पर क्लिक करें <br> &#x2022; आपके नए मोबाइल नंबर पर ओटीपी भेजा जाएगा जिसे आप ओटीपी फील्ड में दर्ज कर सकते हैं <br> &#x2022; आपका मोबाइल नंबर अपडेट कर दिया जाएगा!"
       buttons:
-      - title: मोबाइल अपडेट करने के लिए जाएं
-        type: '2'
-      text: 'हम आपकी मदद करना चाहते हैं कृपया नीचे दिए गए चरणों का पालन करें: <br> &#x2022; ऊपरी दाएं कोने में उपयोगकर्ता आइकन पर क्लिक करें <br> &#x2022; ड्रॉपडाउन मेनू से खाता चुनें और आपको खाता सेटिंग पृष्ठ पर रीडायरेक्ट कर दिया जाएगा <br> &#x2022; अपडेट मोबाइल नंबर पर क्लिक करें और अपना नया मोबाइल नंबर दर्ज करें फिर भेजे गए ओटीपी पर क्लिक करें <br> &#x2022; आपके नए मोबाइल नंबर पर ओटीपी भेजा जाएगा जिसे आप ओटीपी फील्ड में दर्ज कर सकते हैं <br> &#x2022; आपका मोबाइल नंबर अपडेट कर दिया जाएगा!'
+        - title: "मोबाइल अपडेट करने के लिए जाएं"
+          type: "2"
+    channel: "myio"
+
   utter_update_mobile_marathi:
-  - text: |-
-      आम्ही मदत करू इच्छितो, कृपया खाली नमूद केलेल्या चरणांचे अनुसरण करा: 
-       
-       &#x2022; वरच्या उजव्या कोपर्यात वापरकर्ता चिन्हावर क्लिक करा
-       
-       &#x2022; ड्रॉपडाउन मेनूमधून खाते निवडा आणि तुम्हाला खाते सेटिंग पृष्ठावर पुनर्निर्देशित केले जाईल
-       
-       &#x2022; अपडेट मोबाईल नंबर वर क्लिक करा आणि तुमचा नवीन मोबाईल नंबर टाका नंतर पाठवलेल्या OTP वर क्लिक करा
-       
-       &#x2022; तुमच्या नवीन मोबाईल नंबरवर OTP पाठवला जाईल जो तुम्ही OTP फील्डमध्ये टाकू शकता
-       
-       &#x2022; तुमचा मोबाईल नंबर अपडेट केला जाईल!
-       
-       [अपडेट मोबाईल विभागात जा](https://rise.edx.dev.drcsystems.ooo/change_mobile/)
-  - channel: myio
-    custom:
-      buttons:
-      - title: अपडेट मोबाईल विभागात जा
-        type: '2'
+  - text: "आम्ही मदत करू इच्छितो, कृपया खाली नमूद केलेल्या चरणांचे अनुसरण करा: \n
+      \n
+      &#x2022; वरच्या उजव्या कोपर्यात वापरकर्ता चिन्हावर क्लिक करा\n
+      \n
+      &#x2022; ड्रॉपडाउन मेनूमधून खाते निवडा आणि तुम्हाला खाते सेटिंग पृष्ठावर पुनर्निर्देशित केले जाईल\n
+      \n
+      &#x2022; अपडेट मोबाईल नंबर वर क्लिक करा आणि तुमचा नवीन मोबाईल नंबर टाका नंतर पाठवलेल्या OTP वर क्लिक करा\n
+      \n
+      &#x2022; तुमच्या नवीन मोबाईल नंबरवर OTP पाठवला जाईल जो तुम्ही OTP फील्डमध्ये टाकू शकता\n
+      \n
+      &#x2022; तुमचा मोबाईल नंबर अपडेट केला जाईल!\n
+      \n
+      [अपडेट मोबाईल विभागात जा](https://rise.edx.dev.drcsystems.ooo/change_mobile/)"
+
+  - custom:
       text: "We'd like to lend a hand please follow the below mentioned steps: <br> &#x2022; Click on the user icon at upper right corner <br> &#x2022; Choose account from the dropdown menu and you will be redirected to account setting page <br> &#x2022; Click on update mobile number and enter your new mobile number then click on sent OTP <br> &#x2022; OTP will be sent to your new mobile number which you can enter in the OTP field <br> &#x2022; Your mobile number will be updated!"
-  utter_update_mobile_telugu:
-  - text: |-
-      మేము సహాయం చేయాలనుకుంటున్నాము, దయచేసి దిగువ పేర్కొన్న దశలను అనుసరించండి: 
-       
-       &#x2022; ఎగువ కుడి మూలలో ఉన్న వినియోగదారు చిహ్నంపై క్లిక్ చేయండి
-       
-       &#x2022; డ్రాప్‌డౌన్ మెను నుండి ఖాతాను ఎంచుకోండి మరియు మీరు ఖాతా సెట్టింగ్ పేజీకి మళ్లించబడతారు
-       
-       &#x2022; అప్‌డేట్ మొబైల్ నంబర్‌పై క్లిక్ చేసి, మీ కొత్త మొబైల్ నంబర్‌ను నమోదు చేసి, పంపిన OTPపై క్లిక్ చేయండి
-       
-       &#x2022; మీరు OTP ఫీల్డ్‌లో నమోదు చేయగల మీ కొత్త మొబైల్ నంబర్‌కు OTP పంపబడుతుంది
-       
-       &#x2022; మీ మొబైల్ నంబర్ నవీకరించబడుతుంది!
-       
-       [మొబైల్ అప్‌డేట్ విభాగానికి వెళ్లండి](https://rise.edx.dev.drcsystems.ooo/change_mobile/)
-  - channel: myio
-    custom:
       buttons:
-      - title: మొబైల్ అప్‌డేట్ విభాగానికి వెళ్లండి
-        type: '2'
-      text: 'మేము సహాయం చేయాలనుకుంటున్నాము, దయచేసి దిగువ పేర్కొన్న దశలను అనుసరించండి: <br> &#x2022; ఎగువ కుడి మూలలో ఉన్న వినియోగదారు చిహ్నంపై క్లిక్ చేయండి <br> &#x2022; డ్రాప్‌డౌన్ మెను నుండి ఖాతాను ఎంచుకోండి మరియు మీరు ఖాతా సెట్టింగ్ పేజీకి మళ్లించబడతారు <br> &#x2022; అప్‌డేట్ మొబైల్ నంబర్‌పై క్లిక్ చేసి, మీ కొత్త మొబైల్ నంబర్‌ను నమోదు చేసి, పంపిన OTPపై క్లిక్ చేయండి <br> &#x2022; మీరు OTP ఫీల్డ్‌లో నమోదు చేయగల మీ కొత్త మొబైల్ నంబర్‌కు OTP పంపబడుతుంది <br> &#x2022; మీ మొబైల్ నంబర్ నవీకరించబడుతుంది!'
+        - title: "अपडेट मोबाईल विभागात जा"
+          type: "2"
+    channel: "myio"
+
+  utter_update_mobile_tamil:
+  - text: "நாங்கள் உதவ விரும்புகிறோம், கீழே குறிப்பிடப்பட்டுள்ள படிகளைப் பின்பற்றவும்: \n
+      \n
+      &#x2022; மேல் வலது மூலையில் உள்ள பயனர் ஐகானைக் கிளிக் செய்யவும்\n
+      \n
+      &#x2022; கீழ்தோன்றும் மெனுவிலிருந்து கணக்கைத் தேர்ந்தெடுக்கவும், நீங்கள் கணக்கு அமைப்பு பக்கத்திற்கு திருப்பி விடப்படுவீர்கள்\n
+      \n
+      &#x2022; அப்டேட் மொபைல் எண்ணைக் கிளிக் செய்து, உங்கள் புதிய மொபைல் எண்ணை உள்ளிட்டு Sent OTP என்பதைக் கிளிக் செய்யவும்\n
+      \n
+      &#x2022; OTP உங்கள் புதிய மொபைல் எண்ணுக்கு அனுப்பப்படும், அதை நீங்கள் OTP புலத்தில் உள்ளிடலாம்\n
+      \n
+      &#x2022; உங்கள் மொபைல் எண் புதுப்பிக்கப்படும்!\n
+      \n
+      [மொபைல் புதுப்பிப்பு பகுதிக்குச் செல்லவும்](https://rise.edx.dev.drcsystems.ooo/change_mobile/)"
+
+  - custom:
+      text: "நாங்கள் உதவ விரும்புகிறோம், கீழே குறிப்பிடப்பட்டுள்ள படிகளைப் பின்பற்றவும்: <br> &#x2022; மேல் வலது மூலையில் உள்ள பயனர் ஐகானைக் கிளிக் செய்யவும் <br> &#x2022; கீழ்தோன்றும் மெனுவிலிருந்து ஒரு கணக்கைத் தேர்ந்தெடுக்கவும், நீங்கள் கணக்கு அமைப்பு பக்கத்திற்கு திருப்பி விடப்படுவீர்கள் <br> &#x2022; அப்டேட் மொபைல் எண்ணைக் கிளிக் செய்து, உங்கள் புதிய மொபைல் எண்ணை உள்ளிட்டு அனுப்பிய OTP <br> &#x2022; உங்கள் புதிய மொபைல் எண்ணுக்கு OTP அனுப்பப்படும், அதை நீங்கள் OTP புலத்தில் உள்ளிடலாம் <br> &#x2022; உங்கள் மொபைல் எண் புதுப்பிக்கப்படும்!"
+      buttons:
+        - title: "மொபைல் புதுப்பிப்பு பகுதிக்குச் செல்லவும்"
+          type: "2"
+    channel: "myio"
+
+  utter_update_mobile_odia:
+  - text: "ଆମେ ଏକ ହାତ ଦେଇବୁ, ଦୟାକରି ନୀଚେ ଉଲ୍ଲେଖିତ ପଥରେ ଅନୁସରଣ କରନ୍ତୁ: \n
+      \n
+      &#x2022; ଉପରେ ଡାହରା କୋଣାରେ ବର୍ତ୍ତମାନ ଅବସ୍ଥା ଚିହ୍ନରେ କ୍ଲିକ୍ କରନ୍ତୁ\n
+      \n
+      &#x2022; ଡ୍ରପଡାଉନ୍ ମେନୁ ରୁ 'ଆକାଉଣ୍ଟ' ବାଛନ୍ତୁ ଏବଂ ତୁମେ ଆକାଉଣ୍ଟ ସେଟିଂର ପୃଷ୍ଠାରେ ପୁଣିଥିବେ\n
+      \n
+      &#x2022; 'ମୋବାଇଲ୍ ନମ୍ବର୍‌ ଅପଡେଟ୍' ରେ କ୍ଲିକ୍ କରନ୍ତୁ ଏବଂ ଆପଣଙ୍କର ନୂଆ ମୋବାଇଲ୍ ନମ୍ବର୍ ଦାଖଲ କରନ୍ତୁ ତାଙ୍କ ପ୍ରତି 'ପଠାନ୍ତୁ OTP' ରେ କଲିକ୍ କରନ୍ତୁ\n
+      \n
+      &#x2022; OTP ଆପଣଙ୍କର ନୂଆ ମୋବାଇଲ୍ ନମ୍ବର୍‌ରେ ପଠାନ୍ତୁ, ଯାହା ଆପଣ ଓଟିପି ଫିଲ୍ଡ୍‌ରେ ଦାଖଲ କରିପାରେ\n
+      \n
+      &#x2022; ଆପଣଙ୍କର ମୋବାଇଲ୍ ନମ୍ବର୍‌ ହୋଇଗଲା!\n
+      \n
+      [ମୋବାଇଲ୍ ଅପଡେଟ୍ ପୃଷ୍ଠାରେ ଯାଉନ୍ତୁ](https://rise.edx.dev.drcsystems.ooo/change_mobile/)"
+  - custom:
+      text: "ଆମେ ଏକ ହାତ ଦେଇବୁ, ଦୟାକରି ନୀଚେ ଉଲ୍ଲେଖିତ ପଥରେ ଅନୁସରଣ କରନ୍ତୁ: <br> &#x2022; ଉପରେ ଡାହରା କୋଣାରେ ବର୍ତ୍ତମାନ ଅବସ୍ଥା ଚିହ୍ନରେ କ୍ଲିକ୍ କରନ୍ତୁ <br> &#x2022; ଡ୍ରପଡାଉନ୍ ମେନୁ ରୁ 'ଆକାଉଣ୍ଟ' ବାଛନ୍ତୁ ଏବଂ ତୁମେ ଆକାଉଣ୍ଟ ସେଟିଂର ପୃଷ୍ଠାରେ ପୁଣିଥିବେ <br> &#x2022; 'ମୋବାଇଲ୍ ନମ୍ବର୍‌ ଅପଡେଟ୍' ରେ କ୍ଲିକ୍ କରନ୍ତୁ ଏବଂ ଆପଣଙ୍କର ନୂଆ ମୋବାଇଲ୍ ନମ୍ବର୍ ଦାଖଲ କରନ୍ତୁ ତାଙ୍କ ପ୍ରତି 'ପଠାନ୍ତୁ OTP' ରେ କଲିକ୍ କରନ୍ତୁ <br> &#x2022; OTP ଆପଣଙ୍କର ନୂଆ ମୋବାଇଲ୍ ନମ୍ବର୍‌ରେ ପଠାନ୍ତୁ, ଯାହା ଆପଣ ଓଟିପି ଫିଲ୍ଡ୍‌ରେ ଦାଖଲ କରିପାରେ <br> &#x2022; ଆପଣଙ୍କର ମୋବାଇଲ୍ ନମ୍ବର୍‌ ହୋଇଗଲା!"
+      buttons:
+        - title: "ମୋବାଇଲ୍ ଅପଡେଟ୍ ପୃଷ୍ଠାରେ ଯାଉନ୍ତୁ"
+          type: "2"
+    channel: "myio"
+
   utter_update_personal_details:
-  - text: |-
-      We'd like to lend a hand please follow the below mentioned steps: 
-       
-       &#x2022; Click on the user icon at upper right corner
-       
-       &#x2022; Choose profile from the dropdown menu and you will be redirected to user profile page
-       
-       &#x2022; Then, update your email address or birth date and click on submit
-       
-       &#x2022; Your changes will be saved!
-       
-       [Go to Profile](https://rise.edx.dev.drcsystems.ooo/profile/)
-  - channel: myio
-    custom:
-      buttons:
-      - title: Go to Profile
-        type: '1'
+  - text: "We'd like to lend a hand please follow the below mentioned steps: \n
+      \n
+      &#x2022; Click on the user icon at upper right corner\n
+      \n
+      &#x2022; Choose profile from the dropdown menu and you will be redirected to user profile page\n
+      \n
+      &#x2022; Then, update your email address or birth date and click on submit\n
+      \n
+      &#x2022; Your changes will be saved!\n
+      \n
+      [Go to Profile](https://rise.edx.dev.drcsystems.ooo/profile/)"
+
+  - custom:
       text: "We'd like to lend a hand please follow the below mentioned steps: <br> &#x2022; Click on the user icon at upper right corner <br> &#x2022; Choose profile from the dropdown menu and you will be redirected to user profile page <br> &#x2022; Then, update your email address or birth date and click on submit <br> &#x2022; Your changes will be saved!"
+      buttons:
+        - title: "Go to Profile"
+          type: "1"
+    channel: "myio"
+
   utter_update_personal_details_hindi:
-  - text: |-
-      हम आपकी मदद करना चाहते हैं कृपया नीचे दिए गए चरणों का पालन करें: 
-       
-       &#x2022; ऊपरी दाएं कोने में उपयोगकर्ता आइकन पर क्लिक करें
-       
-       &#x2022; ड्रॉपडाउन मेनू से प्रोफ़ाइल चुनें और आपको उपयोगकर्ता प्रोफ़ाइल पृष्ठ पर रीडायरेक्ट कर दिया जाएगा
-       
-       &#x2022; फिर, अपना ईमेल पता या जन्मतिथि अपडेट करें और सबमिट पर क्लिक करें
-       
-       &#x2022; आपके परिवर्तन सहेजे जाएंगे!
-       
-       [प्रोफाइल सेक्शन में जाएं](https://rise.edx.dev.drcsystems.ooo/profile/)
-  - channel: myio
-    custom:
+  - text: "हम आपकी मदद करना चाहते हैं कृपया नीचे दिए गए चरणों का पालन करें: \n
+      \n
+      &#x2022; ऊपरी दाएं कोने में उपयोगकर्ता आइकन पर क्लिक करें\n
+      \n
+      &#x2022; ड्रॉपडाउन मेनू से प्रोफ़ाइल चुनें और आपको उपयोगकर्ता प्रोफ़ाइल पृष्ठ पर रीडायरेक्ट कर दिया जाएगा\n
+      \n
+      &#x2022; फिर, अपना ईमेल पता या जन्मतिथि अपडेट करें और सबमिट पर क्लिक करें\n
+      \n
+      &#x2022; आपके परिवर्तन सहेजे जाएंगे!\n
+      \n
+      [प्रोफाइल सेक्शन में जाएं](https://rise.edx.dev.drcsystems.ooo/profile/)"
+
+  - custom:
+      text: "हम आपकी मदद करना चाहते हैं कृपया नीचे दिए गए चरणों का पालन करें: <br> &#x2022; ऊपरी दाएं कोने में उपयोगकर्ता आइकन पर क्लिक करें <br> &#x2022; ड्रॉपडाउन मेनू से प्रोफ़ाइल चुनें और आपको उपयोगकर्ता प्रोफ़ाइल पृष्ठ पर रीडायरेक्ट कर दिया जाएगा <br> &#x2022; फिर, अपना ईमेल पता या जन्मतिथि अपडेट करें और सबमिट पर क्लिक करें <br> &#x2022; आपके परिवर्तन सहेजे जाएंगे!"
       buttons:
-      - title: प्रोफाइल सेक्शन में जाएं
-        type: '1'
-      text: 'हम आपकी मदद करना चाहते हैं कृपया नीचे दिए गए चरणों का पालन करें: <br> &#x2022; ऊपरी दाएं कोने में उपयोगकर्ता आइकन पर क्लिक करें <br> &#x2022; ड्रॉपडाउन मेनू से प्रोफ़ाइल चुनें और आपको उपयोगकर्ता प्रोफ़ाइल पृष्ठ पर रीडायरेक्ट कर दिया जाएगा <br> &#x2022; फिर, अपना ईमेल पता या जन्मतिथि अपडेट करें और सबमिट पर क्लिक करें <br> &#x2022; आपके परिवर्तन सहेजे जाएंगे!'
+        - title: "प्रोफाइल सेक्शन में जाएं"
+          type: "1"
+    channel: "myio"
+
   utter_update_personal_details_marathi:
-  - text: |-
-      आम्ही मदत करू इच्छितो, कृपया खाली नमूद केलेल्या चरणांचे अनुसरण करा: 
-       
-       &#x2022; वरच्या उजव्या कोपर्यात वापरकर्ता चिन्हावर क्लिक करा
-       
-       &#x2022; ड्रॉपडाउन मेनूमधून प्रोफाइल निवडा आणि तुम्हाला वापरकर्ता प्रोफाइल पृष्ठावर पुनर्निर्देशित केले जाईल
-       
-       &#x2022; त्यानंतर, तुमचा ईमेल पत्ता किंवा जन्मतारीख अपडेट करा आणि सबमिट वर क्लिक करा
-       
-       &#x2022; तुमचे बदल जतन केले जातील!
-       
-       [प्रोफाइल विभागात जा](https://rise.edx.dev.drcsystems.ooo/profile/)
-  - channel: myio
-    custom:
+  - text: "आम्ही मदत करू इच्छितो, कृपया खाली नमूद केलेल्या चरणांचे अनुसरण करा: \n
+      \n
+      &#x2022; वरच्या उजव्या कोपर्यात वापरकर्ता चिन्हावर क्लिक करा\n
+      \n
+      &#x2022; ड्रॉपडाउन मेनूमधून प्रोफाइल निवडा आणि तुम्हाला वापरकर्ता प्रोफाइल पृष्ठावर पुनर्निर्देशित केले जाईल\n
+      \n
+      &#x2022; त्यानंतर, तुमचा ईमेल पत्ता किंवा जन्मतारीख अपडेट करा आणि सबमिट वर क्लिक करा\n
+      \n
+      &#x2022; तुमचे बदल जतन केले जातील!\n
+      \n
+      [प्रोफाइल विभागात जा](https://rise.edx.dev.drcsystems.ooo/profile/)"
+
+  - custom:
+      text: "आम्ही मदत करू इच्छितो, कृपया खाली नमूद केलेल्या चरणांचे अनुसरण करा: <br> &#x2022; वरच्या उजव्या कोपर्यात वापरकर्ता चिन्हावर क्लिक करा <br> &#x2022; ड्रॉपडाउन मेनूमधून प्रोफाइल निवडा आणि तुम्हाला वापरकर्ता प्रोफाइल पृष्ठावर पुनर्निर्देशित केले जाईल <br> &#x2022; त्यानंतर, तुमचा ईमेल पत्ता किंवा जन्मतारीख अपडेट करा आणि सबमिट वर क्लिक करा <br> &#x2022; तुमचे बदल जतन केले जातील!"
       buttons:
-      - title: प्रोफाइल विभागात जा
-        type: '1'
-      text: 'आम्ही मदत करू इच्छितो, कृपया खाली नमूद केलेल्या चरणांचे अनुसरण करा: <br> &#x2022; वरच्या उजव्या कोपर्यात वापरकर्ता चिन्हावर क्लिक करा <br> &#x2022; ड्रॉपडाउन मेनूमधून प्रोफाइल निवडा आणि तुम्हाला वापरकर्ता प्रोफाइल पृष्ठावर पुनर्निर्देशित केले जाईल <br> &#x2022; त्यानंतर, तुमचा ईमेल पत्ता किंवा जन्मतारीख अपडेट करा आणि सबमिट वर क्लिक करा <br> &#x2022; तुमचे बदल जतन केले जातील!'
-  utter_update_personal_details_telugu:
-  - text: |-
-      మేము సహాయం చేయాలనుకుంటున్నాము, దయచేసి దిగువ పేర్కొన్న దశలను అనుసరించండి: 
-       
-       &#x2022; ఎగువ కుడి మూలలో ఉన్న వినియోగదారు చిహ్నంపై క్లిక్ చేయండి
-       
-       &#x2022; డ్రాప్‌డౌన్ మెను నుండి ప్రొఫైల్‌ని ఎంచుకోండి మరియు మీరు వినియోగదారు ప్రొఫైల్ పేజీకి మళ్లించబడతారు
-       
-       &#x2022; ఆపై, మీ ఇమెయిల్ చిరునామా లేదా పుట్టిన తేదీని నవీకరించండి మరియు సమర్పించుపై క్లిక్ చేయండి
-       
-       &#x2022; మీ మార్పులు సేవ్ చేయబడతాయి!
-       
-       [ప్రొఫైల్ విభాగానికి వెళ్లండి](https://rise.edx.dev.drcsystems.ooo/profile/)
-  - channel: myio
-    custom:
+        - title: "प्रोफाइल विभागात जा"
+          type: "1"
+    channel: "myio"
+
+  utter_update_personal_details_tamil:
+  - text: "நாங்கள் உதவ விரும்புகிறோம், கீழே குறிப்பிடப்பட்டுள்ள படிகளைப் பின்பற்றவும்: \n
+      \n
+      &#x2022; மேல் வலது மூலையில் உள்ள பயனர் ஐகானைக் கிளிக் செய்யவும்\n
+      \n
+      &#x2022; கீழ்தோன்றும் மெனுவிலிருந்து சுயவிவரத்தைத் தேர்ந்தெடுக்கவும், நீங்கள் பயனர் சுயவிவரப் பக்கத்திற்குத் திருப்பி விடப்படுவீர்கள்\n
+      \n
+      &#x2022; பின்னர், உங்கள் மின்னஞ்சல் முகவரி அல்லது பிறந்த தேதியைப் புதுப்பித்து, சமர்ப்பி என்பதைக் கிளிக் செய்யவும்\n
+      \n
+      &#x2022; உங்கள் மாற்றங்கள் சேமிக்கப்படும்!\n
+      \n
+      [சுயவிவரப் பகுதிக்குச் செல்லவும்](https://rise.edx.dev.drcsystems.ooo/profile/)"
+
+  - custom:
+      text: "நாங்கள் உதவ விரும்புகிறோம், கீழே குறிப்பிடப்பட்டுள்ள படிகளைப் பின்பற்றவும்: <br> &#x2022; மேல் வலது மூலையில் உள்ள பயனர் ஐகானைக் கிளிக் செய்யவும் <br> &#x2022; கீழ்தோன்றும் மெனுவிலிருந்து சுயவிவரத்தைத் தேர்ந்தெடுக்கவும், நீங்கள் பயனர் சுயவிவரப் பக்கத்திற்கு <br> &#x2022; பின்னர், உங்கள் மின்னஞ்சல் முகவரி அல்லது பிறந்த தேதியைப் புதுப்பித்து, சமர்ப்பி <br> &#x2022; உங்கள் மாற்றங்கள் சேமிக்கப்படும்!"
       buttons:
-      - title: ప్రొఫైల్ విభాగానికి వెళ్లండి
-        type: '1'
-      text: 'మేము సహాయం చేయాలనుకుంటున్నాము, దయచేసి దిగువ పేర్కొన్న దశలను అనుసరించండి: <br> &#x2022; ఎగువ కుడి మూలలో ఉన్న వినియోగదారు చిహ్నంపై క్లిక్ చేయండి <br> &#x2022; డ్రాప్‌డౌన్ మెను నుండి ప్రొఫైల్‌ని ఎంచుకోండి మరియు మీరు వినియోగదారు ప్రొఫైల్ పేజీకి మళ్లించబడతారు <br> &#x2022; ఆపై, మీ ఇమెయిల్ చిరునామా లేదా పుట్టిన తేదీని నవీకరించండి మరియు సమర్పించుపై క్లిక్ చేయండి <br> &#x2022; మీ మార్పులు సేవ్ చేయబడతాయి!'
+        - title: "சுயவிவரப் பகுதிக்குச் செல்லவும்"
+          type: "1"
+    channel: "myio"
+
+  utter_update_personal_details_odia:
+  - text: "ଆମେ ଏକ ହାତ ଦେଇବୁ, ଦୟାକରି ନୀଚେ ଉଲ୍ଲେଖିତ ପଥରେ ଅନୁସରଣ କରନ୍ତୁ: \n
+      \n
+      &#x2022; ଉପରେ ଡାହରା କୋଣାରେ ବର୍ତ୍ତମାନ ଅବସ୍ଥା ଚିହ୍ନରେ କ୍ଲିକ୍ କରନ୍ତୁ\n
+      \n
+      &#x2022; ଡ୍ରପଡାଉନ୍ ମେନୁ ରୁ 'ପ୍ରୋଫାଇଲ୍' ବାଛନ୍ତୁ ଏବଂ ତୁମେ ପ୍ରୋଫାଇଲ୍ ପୃଷ୍ଠାରେ ପୁଣିଥିବେ\n
+      \n
+      &#x2022; ତାଙ୍କୁ, ଆପଣଙ୍କର ଇମେଲ୍ ଠାରୁ ପରିବର୍ତ୍ତନ କରନ୍ତୁ କିମ୍ବା ଜନ୍ମ ତାରିଖ ଏବଂ 'ସବମିଟ୍' ରେ କଲିକ୍ କରନ୍ତୁ\n
+      \n
+      &#x2022; ଆପଣଙ୍କର ପରିବର୍ତ୍ତନ ସଂରକ୍ଷିତ ହେବ!\n
+      \n
+      [ପ୍ରୋଫାଇଲ୍ ପୃଷ୍ଠାରେ ଯାଉନ୍ତୁ](https://rise.edx.dev.drcsystems.ooo/profile/)"
+  - custom:
+      text: "ଆମେ ଏକ ହାତ ଦେଇବୁ, ଦୟାକରି ନୀଚେ ଉଲ୍ଲେଖିତ ପଥରେ ଅନୁସରଣ କରନ୍ତୁ: <br> &#x2022; ଉପରେ ଡାହରା କୋଣାରେ ବର୍ତ୍ତମାନ ଅବସ୍ଥା ଚିହ୍ନରେ କ୍ଲିକ୍ କରନ୍ତୁ <br> &#x2022; ଡ୍ରପଡାଉନ୍ ମେନୁ ରୁ 'ପ୍ରୋଫାଇଲ୍' ବାଛନ୍ତୁ ଏବଂ ତୁମେ ପ୍ରୋଫାଇଲ୍ ପୃ෷୍ଠାରେ ପୁଣିଥିବେ <br> &#x2022; ତାଙ୍କୁ, ଆପଣଙ୍କର ଇମେଲ୍ ଠାରୁ ପରିବର୍ତ୍ତନ କରନ୍ତୁ କିମ୍ବା ଜନ୍ମ ତାରିଖ ଏବଂ 'ସବମିଟ୍' ରେ କଲିକ୍ କରନ୍ତୁ <br> &#x2022; ଆପଣଙ୍କର ପରିବର୍ତ୍ତନ ସଂରକ୍ଷିତ ହେବ! <br> [ପ୍ରୋଫାଇଲ୍ ପୃ෷୍ଠାରେ ଯାଉନ୍ତୁ](https://rise.edx.dev.drcsystems.ooo/profile/)"
+      buttons:
+        - title: "ପ୍ରୋଫାଇଲ୍ ପୃ෷୍ଠାରେ ଯାଉନ୍ତୁ"
+          type: "1"
+    channel: "myio"
+
   utter_certificates:
-  - text: |-
-      We'd like to lend a hand please follow the below mentioned steps: 
-       
-       &#x2022; Click on the user icon at upper right corner
-       
-       &#x2022; Choose my certificates from the dropdown menu and you will be redirected to certificate page
-       
-       &#x2022; You will see all the certificates listed and can download them as well
-       
-       [Go to My Certificates](https://rise.edx.dev.drcsystems.ooo/my-certificates/)
-  - channel: myio
-    custom:
-      buttons:
-      - title: Go to My Certificates
-        type: '3'
+  - text: "We'd like to lend a hand please follow the below mentioned steps: \n
+      \n
+      &#x2022; Click on the user icon at upper right corner\n
+      \n
+      &#x2022; Choose my certificates from the dropdown menu and you will be redirected to certificate page\n
+      \n
+      &#x2022; You will see all the certificates listed and can download them as well\n
+      \n
+      [Go to My Certificates](https://rise.edx.dev.drcsystems.ooo/my-certificates/)"
+
+  - custom:
       text: "We'd like to lend a hand please follow the below mentioned steps: <br> &#x2022; Click on the user icon at upper right corner <br> &#x2022; Choose my certificates from the dropdown menu and you will be redirected to certificate page <br> &#x2022; You will see all the certificates listed and can download them as well"
+      buttons:
+        - title: "Go to My Certificates"
+          type: "3"
+    channel: "myio"
+
   utter_certificates_hindi:
-  - text: |-
-      हम आपकी मदद करना चाहते हैं कृपया नीचे दिए गए चरणों का पालन करें: 
-       
-       &#x2022; ऊपरी दाएं कोने में उपयोगकर्ता आइकन पर क्लिक करें
-       
-       &#x2022; ड्रॉपडाउन मेनू से मेरे प्रमाणपत्र चुनें और आपको प्रमाणपत्र पृष्ठ पर रीडायरेक्ट कर दिया जाएगा
-       
-       &#x2022; आप सूचीबद्ध सभी प्रमाणपत्र देखेंगे और उन्हें डाउनलोड भी कर सकते हैं
-       
-       [माय सर्टिफिकेट्स पर जाएं](https://rise.edx.dev.drcsystems.ooo/my-certificates/)
-  - channel: myio
-    custom:
+  - text: "हम आपकी मदद करना चाहते हैं कृपया नीचे दिए गए चरणों का पालन करें: \n
+      \n
+      &#x2022; ऊपरी दाएं कोने में उपयोगकर्ता आइकन पर क्लिक करें\n
+      \n
+      &#x2022; ड्रॉपडाउन मेनू से मेरे प्रमाणपत्र चुनें और आपको प्रमाणपत्र पृष्ठ पर रीडायरेक्ट कर दिया जाएगा\n
+      \n
+      &#x2022; आप सूचीबद्ध सभी प्रमाणपत्र देखेंगे और उन्हें डाउनलोड भी कर सकते हैं\n
+      \n
+      [माय सर्टिफिकेट्स पर जाएं](https://rise.edx.dev.drcsystems.ooo/my-certificates/)"
+
+  - custom:
+      text: "हम आपकी मदद करना चाहते हैं कृपया नीचे दिए गए चरणों का पालन करें: <br> &#x2022; ऊपरी दाएं कोने में उपयोगकर्ता आइकन पर क्लिक करें <br> &#x2022; ड्रॉपडाउन मेनू से मेरे प्रमाणपत्र चुनें और आपको प्रमाणपत्र पृष्ठ पर रीडायरेक्ट कर दिया जाएगा <br> &#x2022; आप सूचीबद्ध सभी प्रमाणपत्र देखेंगे और उन्हें डाउनलोड भी कर सकते हैं"
       buttons:
-      - title: माय सर्टिफिकेट्स पर जाएं
-        type: '3'
-      text: 'हम आपकी मदद करना चाहते हैं कृपया नीचे दिए गए चरणों का पालन करें: <br> &#x2022; ऊपरी दाएं कोने में उपयोगकर्ता आइकन पर क्लिक करें <br> &#x2022; ड्रॉपडाउन मेनू से मेरे प्रमाणपत्र चुनें और आपको प्रमाणपत्र पृष्ठ पर रीडायरेक्ट कर दिया जाएगा <br> &#x2022; आप सूचीबद्ध सभी प्रमाणपत्र देखेंगे और उन्हें डाउनलोड भी कर सकते हैं'
+        - title: "माय सर्टिफिकेट्स पर जाएं"
+          type: "3"
+    channel: "myio"
+
   utter_certificates_marathi:
-  - text: |-
-      आम्ही मदत करू इच्छितो, कृपया खाली नमूद केलेल्या चरणांचे अनुसरण करा: 
-       
-       &#x2022; वरच्या उजव्या कोपर्यात वापरकर्ता चिन्हावर क्लिक करा
-       
-       &#x2022; ड्रॉपडाउन मेनूमधून माझी प्रमाणपत्रे निवडा आणि तुम्हाला प्रमाणपत्र पृष्ठावर पुनर्निर्देशित केले जाईल
-       
-       &#x2022; आपण सूचीबद्ध सर्व प्रमाणपत्रे पहाल आणि ती डाउनलोड देखील करू शकता
-       
-       [माझे प्रमाणपत्रे वर जा](https://rise.edx.dev.drcsystems.ooo/my-certificates/)
-  - channel: myio
-    custom:
+  - text: "आम्ही मदत करू इच्छितो, कृपया खाली नमूद केलेल्या चरणांचे अनुसरण करा: \n
+      \n
+      &#x2022; वरच्या उजव्या कोपर्यात वापरकर्ता चिन्हावर क्लिक करा\n
+      \n
+      &#x2022; ड्रॉपडाउन मेनूमधून माझी प्रमाणपत्रे निवडा आणि तुम्हाला प्रमाणपत्र पृष्ठावर पुनर्निर्देशित केले जाईल\n
+      \n
+      &#x2022; आपण सूचीबद्ध सर्व प्रमाणपत्रे पहाल आणि ती डाउनलोड देखील करू शकता\n
+      \n
+      [माझे प्रमाणपत्रे वर जा](https://rise.edx.dev.drcsystems.ooo/my-certificates/)"
+
+  - custom:
+      text: "आम्ही मदत करू इच्छितो, कृपया खाली नमूद केलेल्या चरणांचे अनुसरण करा: <br> &#x2022; वरच्या उजव्या कोपर्यात वापरकर्ता चिन्हावर क्लिक करा <br> &#x2022; ड्रॉपडाउन मेनूमधून माझी प्रमाणपत्रे निवडा आणि तुम्हाला प्रमाणपत्र पृष्ठावर पुनर्निर्देशित केले जाईल <br> &#x2022; आपण सूचीबद्ध सर्व प्रमाणपत्रे पहाल आणि ती डाउनलोड देखील करू शकता"
       buttons:
-      - title: माझे प्रमाणपत्रे वर जा
-        type: '3'
-      text: 'आम्ही मदत करू इच्छितो, कृपया खाली नमूद केलेल्या चरणांचे अनुसरण करा: <br> &#x2022; वरच्या उजव्या कोपर्यात वापरकर्ता चिन्हावर क्लिक करा <br> &#x2022; ड्रॉपडाउन मेनूमधून माझी प्रमाणपत्रे निवडा आणि तुम्हाला प्रमाणपत्र पृष्ठावर पुनर्निर्देशित केले जाईल <br> &#x2022; आपण सूचीबद्ध सर्व प्रमाणपत्रे पहाल आणि ती डाउनलोड देखील करू शकता'
-  utter_certificates_telugu:
-  - text: |-
-      మేము సహాయం చేయాలనుకుంటున్నాము, దయచేసి దిగువ పేర్కొన్న దశలను అనుసరించండి: 
-       
-       &#x2022; ఎగువ కుడి మూలలో ఉన్న వినియోగదారు చిహ్నంపై క్లిక్ చేయండి
-       
-       &#x2022; డ్రాప్‌డౌన్ మెను నుండి నా సర్టిఫికేట్‌లను ఎంచుకోండి మరియు మీరు సర్టిఫికేట్ పేజీకి దారి మళ్లించబడతారు
-       
-       &#x2022; మీరు జాబితా చేయబడిన అన్ని సర్టిఫికేట్‌లను చూస్తారు మరియు వాటిని కూడా డౌన్‌లోడ్ చేసుకోవచ్చు
-       
-       [నా సర్టిఫికేట్‌లకు వెళ్లండి](https://rise.edx.dev.drcsystems.ooo/my-certificates/)
-  - channel: myio
-    custom:
+        - title: "माझे प्रमाणपत्रे वर जा"
+          type: "3"
+    channel: "myio"
+
+  utter_certificates_tamil:
+  - text: "நாங்கள் உதவ விரும்புகிறோம், கீழே குறிப்பிடப்பட்டுள்ள படிகளைப் பின்பற்றவும்: \n
+      \n
+      &#x2022; மேல் வலது மூலையில் உள்ள பயனர் ஐகானைக் கிளிக் செய்யவும்\n
+      \n
+      &#x2022; கீழ்தோன்றும் மெனுவிலிருந்து எனது சான்றிதழ்களைத் தேர்ந்தெடுக்கவும், நீங்கள் சான்றிதழ்கள் பக்கத்திற்கு திருப்பி விடப்படுவீர்கள்\n
+      \n
+      &#x2022; பட்டியலிடப்பட்டுள்ள அனைத்து சான்றிதழ்களையும் நீங்கள் பார்ப்பீர்கள், அவற்றைப் பதிவிறக்கவும் முடியும்\n
+      \n
+      [எனது சான்றிதழ்களுக்குச் செல்லவும்](https://rise.edx.dev.drcsystems.ooo/my-certificates/)"
+
+  - custom:
+      text: "நாங்கள் உதவ விரும்புகிறோம், கீழே குறிப்பிடப்பட்டுள்ள படிகளைப் பின்பற்றவும்: <br> &#x2022; மேல் வலது மூலையில் உள்ள பயனர் ஐகானைக் கிளிக் செய்யவும் <br> &#x2022; கீழ்தோன்றும் மெனுவிலிருந்து எனது சான்றிதழ்களைத் தேர்ந்தெடுக்கவும், நீங்கள் சான்றிதழ் பக்கத்திற்கு திருப்பி விடப்படுவீர்கள் <br> &#x2022; பட்டியலிடப்பட்டுள்ள அனைத்து சான்றிதழ்களையும் நீங்கள் பார்ப்பீர்கள், அவற்றைப் பதிவிறக்கவும் முடியும்"
       buttons:
-      - title: నా సర్టిఫికేట్‌లకు వెళ్లండి
-        type: '3'
-      text: 'మేము సహాయం చేయాలనుకుంటున్నాము, దయచేసి దిగువ పేర్కొన్న దశలను అనుసరించండి: <br> &#x2022; ఎగువ కుడి మూలలో ఉన్న వినియోగదారు చిహ్నంపై క్లిక్ చేయండి <br> &#x2022; డ్రాప్‌డౌన్ మెను నుండి నా సర్టిఫికేట్‌లను ఎంచుకోండి మరియు మీరు సర్టిఫికేట్ పేజీకి దారి మళ్లించబడతారు <br> &#x2022; మీరు జాబితా చేయబడిన అన్ని సర్టిఫికేట్‌లను చూస్తారు మరియు వాటిని కూడా డౌన్‌లోడ్ చేసుకోవచ్చు'
+        - title: "எனது சான்றிதழ்களுக்குச் செல்லவும்"
+          type: "3"
+    channel: "myio"
+
+  utter_certificates_odia:
+  - text: "ଆମେ ଏକ ହାତ ଦେଇବୁ, ଦୟାକରି ନୀଚେ ଉଲ୍ଲେଖିତ ପଥରେ ଅନୁସରଣ କରନ୍ତୁ: \n
+      \n
+      &#x2022; ଉପରେ ଡାହରା କୋଣାରେ ବର୍ତ୍ତମାନ ଅବସ୍ଥା ଚିହ୍ନରେ କ୍ଲିକ୍ କରନ୍ତୁ\n
+      \n
+      &#x2022; 'ମୋ ସର୍ଟିଫିକେଟ୍‌' ଟି ବାଛନ୍ତୁ ଏବଂ ତୁମେ ସର୍ଟିଫିକେଟ୍ ପୃଷ୍ଠାରେ ପୁଣିଥିବେ\n
+      \n
+      &#x2022; ଆପଣଙ୍କର ସମସ୍ତ ସର୍ଟିଫିକେଟ୍ ଲିଷ୍ଟିଙ୍କୁ ଦେଖିପାରିବେ ଏବଂ ସେଗୁଡ଼ିକ ଡାଉନଲୋଡ୍ କରିପାରିବେ\n
+      \n
+      [ମୋ ସର୍ଟିଫିକେଟ୍‌ରେ ଯାଉନ୍ତୁ](https://rise.edx.dev.drcsystems.ooo/my-certificates/)"
+  - custom:
+      text: "ଆମେ ଏକ ହାତ ଦେଇବୁ, ଦୟାକରି ନୀଚେ ଉଲ୍ଲେଖିତ ପଥରେ ଅନୁସରଣ କରନ୍ତୁ: <br> &#x2022; ଉପରେ ଡାହରା କୋଣାରେ ବର୍ତ୍ତମାନ ଅବସ୍ଥା ଚିହ୍ନରେ କ୍ଲିକ୍ କରନ୍ତୁ <br> &#x2022; 'ମୋ ସର୍ଟିଫିକେଟ୍‌' ଟି ବାଛନ୍ତୁ ଏବଂ ତୁମେ ସର୍ଟିଫିକେଟ୍ ପୃଷ୍ଠାରେ ପୁଣିଥିବେ <br> &#x2022; ଆପଣଙ୍କର ସମସ୍ତ ସର୍ଟିଫିକେଟ୍ ଲିଷ୍ଟିଙ୍କୁ ଦେଖିପାରିବେ ଏବଂ ସେଗୁଡ଼ିକ ଡାଉନଲୋଡ୍ କରିପାରିବେ <br> [ମୋ ସର୍ଟିଫିକେଟ୍‌ରେ ଯାଉନ୍ତୁ](https://rise.edx.dev.drcsystems.ooo/my-certificates/)"
+      buttons:
+        - title: "ମୋ ସର୍ଟିଫିକେଟ୍‌ରେ ଯାଉନ୍ତୁ"
+          type: "3"
+    channel: "myio"
+
   utter_password_menu:
-  - text: |-
-      We'd like to lend a hand please follow the below mentioned steps: 
-       
-       &#x2022; Click on the user icon at upper right corner
-       
-       &#x2022; Choose account from the dropdown menu and you will be redirected to account setting page
-       
-       &#x2022; Click on change password and enter your old and new password to confirm
-       
-       &#x2022; Then click on Reset My Password button
-       
-       &#x2022; Your password will be updated!
-       
-       [Go to Reset Password](https://rise.edx.dev.drcsystems.ooo/custom_password_reset_confirm/)
-  - channel: myio
-    custom:
-      buttons:
-      - title: Go to Reset Password
-        type: '4'
+  - text: "We'd like to lend a hand please follow the below mentioned steps: \n
+      \n
+      &#x2022; Click on the user icon at upper right corner\n
+      \n
+      &#x2022; Choose account from the dropdown menu and you will be redirected to account setting page\n
+      \n
+      &#x2022; Click on change password and enter your old and new password to confirm\n
+      \n
+      &#x2022; Then click on Reset My Password button\n
+      \n
+      &#x2022; Your password will be updated!\n
+      \n
+      [Go to Reset Password](https://rise.edx.dev.drcsystems.ooo/custom_password_reset_confirm/)"
+
+  - custom:
       text: "We'd like to lend a hand please follow the below mentioned steps: <br> &#x2022; Click on the user icon at upper right corner <br> &#x2022; Choose account from the dropdown menu and you will be redirected to account setting page <br> &#x2022; Click on change password and enter your old and new password to confirm <br> &#x2022; Then click on Reset My Password button <br> &#x2022; Your password will be updated!"
+      buttons:
+        - title: "Go to Reset Password"
+          type: "4"
+    channel: "myio"
+
   utter_password_menu_hindi:
-  - text: |-
-      हम आपकी मदद करना चाहते हैं कृपया नीचे दिए गए चरणों का पालन करें: 
-       
-       &#x2022; ऊपरी दाएं कोने में उपयोगकर्ता आइकन पर क्लिक करें
-       
-       &#x2022; ड्रॉपडाउन मेनू से खाता चुनें और आपको खाता सेटिंग पृष्ठ पर रीडायरेक्ट कर दिया जाएगा
-       
-       &#x2022; चेंज पासवर्ड पर क्लिक करें और कन्फर्म करने के लिए अपना पुराना और नया पासवर्ड डालें
-       
-       &#x2022; इसके बाद रीसेट माय पासवर्ड बटन पर क्लिक करें
-       
-       &#x2022; आपका पासवर्ड अपडेट कर दिया जाएगा!
-       
-       [अपना पासवर्ड रीसेट करें](https://rise.edx.dev.drcsystems.ooo/custom_password_reset_confirm/)
-  - channel: myio
-    custom:
+  - text: "हम आपकी मदद करना चाहते हैं कृपया नीचे दिए गए चरणों का पालन करें: \n
+      \n
+      &#x2022; ऊपरी दाएं कोने में उपयोगकर्ता आइकन पर क्लिक करें\n
+      \n
+      &#x2022; ड्रॉपडाउन मेनू से खाता चुनें और आपको खाता सेटिंग पृष्ठ पर रीडायरेक्ट कर दिया जाएगा\n
+      \n
+      &#x2022; चेंज पासवर्ड पर क्लिक करें और कन्फर्म करने के लिए अपना पुराना और नया पासवर्ड डालें\n
+      \n
+      &#x2022; इसके बाद रीसेट माय पासवर्ड बटन पर क्लिक करें\n
+      \n
+      &#x2022; आपका पासवर्ड अपडेट कर दिया जाएगा!\n
+      \n
+      [अपना पासवर्ड रीसेट करें](https://rise.edx.dev.drcsystems.ooo/custom_password_reset_confirm/)"
+
+  - custom:
+      text: "हम आपकी मदद करना चाहते हैं कृपया नीचे दिए गए चरणों का पालन करें: <br> &#x2022; ऊपरी दाएं कोने में उपयोगकर्ता आइकन पर क्लिक करें <br> &#x2022; ड्रॉपडाउन मेनू से खाता चुनें और आपको खाता सेटिंग पृष्ठ पर रीडायरेक्ट कर दिया जाएगा <br> &#x2022; चेंज पासवर्ड पर क्लिक करें और कन्फर्म करने के लिए अपना पुराना और नया पासवर्ड डालें <br> &#x2022; इसके बाद रीसेट माय पासवर्ड बटन पर क्लिक करें <br> &#x2022; आपका पासवर्ड अपडेट कर दिया जाएगा!"
       buttons:
-      - title: अपना पासवर्ड रीसेट करें
-        type: '4'
-      text: 'हम आपकी मदद करना चाहते हैं कृपया नीचे दिए गए चरणों का पालन करें: <br> &#x2022; ऊपरी दाएं कोने में उपयोगकर्ता आइकन पर क्लिक करें <br> &#x2022; ड्रॉपडाउन मेनू से खाता चुनें और आपको खाता सेटिंग पृष्ठ पर रीडायरेक्ट कर दिया जाएगा <br> &#x2022; चेंज पासवर्ड पर क्लिक करें और कन्फर्म करने के लिए अपना पुराना और नया पासवर्ड डालें <br> &#x2022; इसके बाद रीसेट माय पासवर्ड बटन पर क्लिक करें <br> &#x2022; आपका पासवर्ड अपडेट कर दिया जाएगा!'
+        - title: "अपना पासवर्ड रीसेट करें"
+          type: "4"
+    channel: "myio"
+
   utter_password_menu_marathi:
-  - text: |-
-      आम्ही मदत करू इच्छितो, कृपया खाली नमूद केलेल्या चरणांचे अनुसरण करा: 
-       
-       &#x2022; वरच्या उजव्या कोपर्यात वापरकर्ता चिन्हावर क्लिक करा
-       
-       &#x2022; ड्रॉपडाउन मेनूमधून खाते निवडा आणि तुम्हाला खाते सेटिंग पृष्ठावर पुनर्निर्देशित केले जाईल
-       
-       &#x2022; पासवर्ड बदला वर क्लिक करा आणि पुष्टी करण्यासाठी तुमचा जुना आणि नवीन पासवर्ड प्रविष्ट करा
-       
-       &#x2022; त्यानंतर माझा पासवर्ड रीसेट करा बटणावर क्लिक करा
-       
-       &#x2022; तुमचा पासवर्ड अपडेट केला जाईल!
-       
-       [तुमचा पासवर्ड रीसेट करा वर जा](https://rise.edx.dev.drcsystems.ooo/custom_password_reset_confirm/)
-  - channel: myio
-    custom:
+  - text: "आम्ही मदत करू इच्छितो, कृपया खाली नमूद केलेल्या चरणांचे अनुसरण करा: \n
+      \n
+      &#x2022; वरच्या उजव्या कोपर्यात वापरकर्ता चिन्हावर क्लिक करा\n
+      \n
+      &#x2022; ड्रॉपडाउन मेनूमधून खाते निवडा आणि तुम्हाला खाते सेटिंग पृष्ठावर पुनर्निर्देशित केले जाईल\n
+      \n
+      &#x2022; पासवर्ड बदला वर क्लिक करा आणि पुष्टी करण्यासाठी तुमचा जुना आणि नवीन पासवर्ड प्रविष्ट करा\n
+      \n
+      &#x2022; त्यानंतर माझा पासवर्ड रीसेट करा बटणावर क्लिक करा\n
+      \n
+      &#x2022; तुमचा पासवर्ड अपडेट केला जाईल!\n
+      \n
+      [तुमचा पासवर्ड रीसेट करा वर जा](https://rise.edx.dev.drcsystems.ooo/custom_password_reset_confirm/)"
+
+  - custom:
+      text: "आम्ही मदत करू इच्छितो, कृपया खाली नमूद केलेल्या चरणांचे अनुसरण करा: <br> &#x2022; वरच्या उजव्या कोपर्यात वापरकर्ता चिन्हावर क्लिक करा <br> &#x2022; ड्रॉपडाउन मेनूमधून खाते निवडा आणि तुम्हाला खाते सेटिंग पृष्ठावर पुनर्निर्देशित केले जाईल <br> &#x2022; पासवर्ड बदला वर क्लिक करा आणि पुष्टी करण्यासाठी तुमचा जुना आणि नवीन पासवर्ड प्रविष्ट करा <br> &#x2022; त्यानंतर माझा पासवर्ड रीसेट करा बटणावर क्लिक करा <br> &#x2022; तुमचा पासवर्ड अपडेट केला जाईल!"
       buttons:
-      - title: तुमचा पासवर्ड रीसेट करा वर जा
-        type: '4'
-      text: 'आम्ही मदत करू इच्छितो, कृपया खाली नमूद केलेल्या चरणांचे अनुसरण करा: <br> &#x2022; वरच्या उजव्या कोपर्यात वापरकर्ता चिन्हावर क्लिक करा <br> &#x2022; ड्रॉपडाउन मेनूमधून खाते निवडा आणि तुम्हाला खाते सेटिंग पृष्ठावर पुनर्निर्देशित केले जाईल <br> &#x2022; पासवर्ड बदला वर क्लिक करा आणि पुष्टी करण्यासाठी तुमचा जुना आणि नवीन पासवर्ड प्रविष्ट करा <br> &#x2022; त्यानंतर माझा पासवर्ड रीसेट करा बटणावर क्लिक करा <br> &#x2022; तुमचा पासवर्ड अपडेट केला जाईल!'
-  utter_password_menu_telugu:
-  - text: |-
-      మేము సహాయం చేయాలనుకుంటున్నాము, దయచేసి దిగువ పేర్కొన్న దశలను అనుసరించండి: 
-       
-       &#x2022; ఎగువ కుడి మూలలో ఉన్న వినియోగదారు చిహ్నంపై క్లిక్ చేయండి
-       
-       &#x2022; డ్రాప్‌డౌన్ మెను నుండి ఖాతాను ఎంచుకోండి మరియు మీరు ఖాతా సెట్టింగ్ పేజీకి మళ్లించబడతారు
-       
-       &#x2022; మార్చు పాస్‌వర్డ్‌పై క్లిక్ చేసి, నిర్ధారించడానికి మీ పాత మరియు కొత్త పాస్‌వర్డ్‌ను నమోదు చేయండి
-       
-       &#x2022; తర్వాత రీసెట్ మై పాస్‌వర్డ్ బటన్‌పై క్లిక్ చేయండి
-       
-       &#x2022; మీ పాస్‌వర్డ్ నవీకరించబడుతుంది!
-       
-       [మీ పాస్‌వర్డ్‌ని రీసెట్ చేయడానికి వెళ్లండి](https://rise.edx.dev.drcsystems.ooo/custom_password_reset_confirm/)
-  - channel: myio
-    custom:
+        - title: "तुमचा पासवर्ड रीसेट करा वर जा"
+          type: "4"
+    channel: "myio"
+
+  utter_password_menu_tamil:
+  - text: "நாங்கள் உதவ விரும்புகிறோம், கீழே குறிப்பிடப்பட்டுள்ள படிகளைப் பின்பற்றவும்: \n
+      \n
+      &#x2022; மேல் வலது மூலையில் உள்ள பயனர் ஐகானைக் கிளிக் செய்யவும்\n
+      \n
+      &#x2022; கீழ்தோன்றும் மெனுவிலிருந்து கணக்கைத் தேர்ந்தெடுக்கவும், நீங்கள் கணக்கு அமைப்பு பக்கத்திற்கு திருப்பி விடப்படுவீர்கள்\n
+      \n
+      &#x2022; கடவுச்சொல்லை மாற்று என்பதைக் கிளிக் செய்து, உறுதிப்படுத்த உங்கள் பழைய மற்றும் புதிய கடவுச்சொல்லை உள்ளிடவும்\n
+      \n
+      &#x2022; பிரதிநிதியாக எனது கடவுச்சொல் மீட்க பொத்தானை கிளிக் செய்யவும்\n
+      \n
+      &#x2022; உங்கள் கடவுச்சொல் புதுப்பிக்கப்படும்!\n
+      \n
+      [உங்கள் கடவுச்சொல்லை மீட்டமைக்க செல்லவும்](https://rise.edx.dev.drcsystems.ooo/custom_password_reset_confirm/)"
+
+  - custom:
+      text: "நாங்கள் உதவ விரும்புகிறோம், கீழே குறிப்பிடப்பட்டுள்ள படிகளைப் பின்பற்றவும்: <br> &#x2022; மேல் வலது மூலையில் உள்ள பயனர் ஐகானைக் கிளிக் செய்யவும் <br> &#x2022; கீழ்தோன்றும் மெனுவிலிருந்து ஒரு கணக்கைத் தேர்ந்தெடுக்கவும், நீங்கள் கணக்கு அமைப்பு பக்கத்திற்கு திருப்பி விடப்படுவீர்கள் <br> &#x2022; கடவுச்சொல்லை மாற்று என்பதைக் கிளிக் செய்து உங்கள் பழைய மற்றும் புதிய கடவுச்சொல்லை உள்ளிடவும் <br> &#x2022; பின்னர் எனது கடவுச்சொல்லை மீட்டமை பொத்தானைக் கிளிக் செய்யவும் <br> &#x2022; உங்கள் கடவுச்சொல் புதுப்பிக்கப்படும்!"
       buttons:
-      - title: మీ పాస్‌వర్డ్‌ని రీసెట్ చేయడానికి వెళ్లండి
-        type: '4'
-      text: 'మేము సహాయం చేయాలనుకుంటున్నాము, దయచేసి దిగువ పేర్కొన్న దశలను అనుసరించండి: <br> &#x2022; ఎగువ కుడి మూలలో ఉన్న వినియోగదారు చిహ్నంపై క్లిక్ చేయండి <br> &#x2022; డ్రాప్‌డౌన్ మెను నుండి ఖాతాను ఎంచుకోండి మరియు మీరు ఖాతా సెట్టింగ్ పేజీకి మళ్లించబడతారు <br> &#x2022; మార్చు పాస్‌వర్డ్‌పై క్లిక్ చేసి, నిర్ధారించడానికి మీ పాత మరియు కొత్త పాస్‌వర్డ్‌ను నమోదు చేయండి <br> &#x2022; తర్వాత రీసెట్ మై పాస్‌వర్డ్ బటన్‌పై క్లిక్ చేయండి <br> &#x2022; మీ పాస్‌వర్డ్ నవీకరించబడుతుంది!'
+        - title: "உங்கள் கடவுச்சொல்லை மீட்டமைக்க செல்லவும்"
+          type: "4"
+    channel: "myio"
+
+  utter_password_menu_odia:
+  - text: "ଆମେ ଏକ ହାତ ଦେଇବୁ, ଦୟାକରି ନୀଚେ ଉଲ୍ଲେଖିତ ପଥରେ ଅନୁସରଣ କରନ୍ତୁ: \n
+      \n
+      &#x2022; ଉପରେ ଡାହରା କୋଣାରେ ବର୍ତ୍ତମାନ ଅବସ୍ଥା ଚିହ୍ନରେ କ୍ଲିକ୍ କରନ୍ତୁ\n
+      \n
+      &#x2022; 'ଆକାଉଣ୍ଟ' ବାଛନ୍ତୁ ଏବଂ ତୁମେ ଆକାଉଣ୍ଟ ସେଟିଂସ୍ ପୃଷ୍ଠାରେ ପୁଣିଥିବେ\n
+      \n
+      &#x2022; 'ପାସ୍‌ୱାର୍ଡ୍ ବଦଳାଇ ଯାଉଛି' କଲିକ୍ କରନ୍ତୁ ଏବଂ ଆପଣଙ୍କର ପୁରାଣା ଏବଂ ନୂଆ ପାସ୍‌ୱାର୍ଡ୍‌ରେ ପ୍ରମାଣ କରନ୍ତୁ\n
+      \n
+      &#x2022; ତାଙ୍କୁ 'ମୋ ପାସ୍‌ୱାର୍ଡ୍ ରିସେଟ୍ କରନ୍ତୁ' କଲିକ୍ କରନ୍ତୁ\n
+      \n
+      &#x2022; ଆପଣଙ୍କର ପାସ୍‌ୱାର୍ଡ୍ ଆପଡେଟ୍ ହେବ!\n
+      \n
+      [ପାସ୍‌ୱାର୍ଡ୍ ରିସେଟ୍ ପ୍ରମାଣ୍ଯ୍ୟରେ ଯାଉନ୍ତୁ](https://rise.edx.dev.drcsystems.ooo/custom_password_reset_confirm/)"
+  - custom:
+      text: "ଆମେ ଏକ ହାତ ଦେଇବୁ, ଦୟାକରି ନୀଚେ ଉଲ୍ଲେଖିତ ପଥରେ ଅନୁସରଣ କରନ୍ତୁ: <br> &#x2022; ଉପରେ ଡାହରା କୋଣାରେ ବର୍ତ୍ତମାନ ଅବସ୍ଥା ଚିହ୍ନରେ କ୍ଲିକ୍ କରନ୍ତୁ <br> &#x2022; 'ଆକାଉଣ୍ଟ' ବାଛନ୍ତୁ ଏବଂ ତୁମେ ଆକାଉଣ୍ଟ ସେଟିଂସ୍ ପୃଷ୍ଠାରେ ପୁଣିଥିବେ <br> &#x2022; 'ପାସ୍‌ୱାର୍ଡ୍ ବଦଳାଇ ଯାଉଛି' କଲିକ୍ କରନ୍ତୁ ଏବଂ ଆପଣଙ୍କର ପୁରାଣା ଏବଂ ନୂଆ ପାସ୍‌ୱାର୍ଡ୍‌ରେ ପ୍ରମାଣ କରନ୍ତୁ <br> &#x2022; ତାଙ୍କୁ 'ମୋ ପାସ୍‌ୱାର୍ଡ୍ ରିସେଟ୍ କରନ୍ତୁ' କଲିକ୍ କରନ୍ତୁ <br> &#x2022; ଆପଣଙ୍କର ପାସ୍‌ୱାର୍ଡ୍ ଆପଡେଟ୍ ହେବ!"
+      buttons:
+        - title: "ପାସ୍‌ୱାର୍ଡ୍ ରିସେଟ୍ ପ୍ରମାଣ୍ଯ୍ୟରେ ଯାଉନ୍ତୁ"
+          type: "4"
+    channel: "myio"
+
   utter_policy_menu:
-  - text: |-
-      Please find the below links:
-       
-       [Go to Website Policy](https://rise.edx.dev.drcsystems.ooo/website-policies)
-       
-       [Go to Terms of Use](https://rise.edx.dev.drcsystems.ooo/terms-of-use)
-  - channel: myio
-    custom:
+  - text: "Please find the below links:\n
+      \n
+      [Go to Website Policy](https://rise.edx.dev.drcsystems.ooo/website-policies)\n
+      \n
+      [Go to Terms of Use](https://rise.edx.dev.drcsystems.ooo/terms-of-use)"
+
+  - custom:
       buttons:
-      - title: Go to Website Policy
-        type: '5'
-        url: https://rise.edx.dev.drcsystems.ooo/website-policies
-      - title: Go to Terms of Use
-        type: '6'
-        url: https://rise.edx.dev.drcsystems.ooo/terms-of-use
+        - title: "Go to Website Policy"
+          type: "5"
+          url: "https://rise.edx.dev.drcsystems.ooo/website-policies"
+        - title: "Go to Terms of Use"
+          type: "6"
+          url: "https://rise.edx.dev.drcsystems.ooo/terms-of-use"
+    channel: "myio"
+
   utter_policy_menu_hindi:
-  - text: |-
-      कृपया नीचे दिए गए लिंक खोजें:
-       
-       [वेबसाइट नीति पर जाएं](https://rise.edx.dev.drcsystems.ooo/website-policies)
-       
-       [इस्तेमाल की शर्तें पर जाएं](https://rise.edx.dev.drcsystems.ooo/terms-of-use)
-  - channel: myio
-    custom:
+  - text: "कृपया नीचे दिए गए लिंक खोजें:\n
+      \n
+      [वेबसाइट नीति पर जाएं](https://rise.edx.dev.drcsystems.ooo/website-policies)\n
+      \n
+      [इस्तेमाल की शर्तें पर जाएं](https://rise.edx.dev.drcsystems.ooo/terms-of-use)"
+
+  - custom:
       buttons:
-      - title: वेबसाइट नीति पर जाएं
-        type: '5'
-        url: https://rise.edx.dev.drcsystems.ooo/website-policies
-      - title: इस्तेमाल की शर्तें पर जाएं
-        type: '6'
-        url: https://rise.edx.dev.drcsystems.ooo/terms-of-use
+        - title: "वेबसाइट नीति पर जाएं"
+          type: "5"
+          url: "https://rise.edx.dev.drcsystems.ooo/website-policies"
+        - title: "इस्तेमाल की शर्तें पर जाएं"
+          type: "6"
+          url: "https://rise.edx.dev.drcsystems.ooo/terms-of-use"
+    channel: "myio"
+
   utter_policy_menu_marathi:
-  - text: |-
-      कृपया खालील लिंक्स शोधा:
-       
-       [वेबसाइट धोरणावर जा](https://rise.edx.dev.drcsystems.ooo/website-policies)
-       
-       [वापराच्या अटींवर जा](https://rise.edx.dev.drcsystems.ooo/terms-of-use)
-  - channel: myio
-    custom:
+  - text: "कृपया खालील लिंक्स शोधा:\n
+      \n
+      [वेबसाइट धोरणावर जा](https://rise.edx.dev.drcsystems.ooo/website-policies)\n
+      \n
+      [वापराच्या अटींवर जा](https://rise.edx.dev.drcsystems.ooo/terms-of-use)"
+
+  - custom:
       buttons:
-      - title: वेबसाइट धोरणावर जा
-        type: '5'
-        url: https://rise.edx.dev.drcsystems.ooo/website-policies
-      - title: वापराच्या अटींवर जा
-        type: '6'
-        url: https://rise.edx.dev.drcsystems.ooo/terms-of-use
-  utter_policy_menu_telugu:
-  - text: |-
-      దయచేసి క్రింది లింక్‌లను కనుగొనండి:
-       
-       [వెబ్‌సైట్ పాలసీకి వెళ్లండి](https://rise.edx.dev.drcsystems.ooo/website-policies)
-       
-       [ఉపయోగ నిబంధనలకు వెళ్లండి](https://rise.edx.dev.drcsystems.ooo/terms-of-use)
-  - channel: myio
-    custom:
+        - title: "वेबसाइट धोरणावर जा"
+          type: "5"
+          url: "https://rise.edx.dev.drcsystems.ooo/website-policies"
+        - title: "वापराच्या अटींवर जा"
+          type: "6"
+          url: "https://rise.edx.dev.drcsystems.ooo/terms-of-use"
+    channel: "myio"
+
+  utter_policy_menu_tamil:
+  - text: "பின்வரும் இணைப்புகளைக் கண்டறியவும்:\n
+      \n
+      [இணையதளக் கொள்கைக்குச் செல்லவும்](https://rise.edx.dev.drcsystems.ooo/website-policies)\n
+      \n
+      [பயன்பாட்டு விதிமுறைகளுக்குச் செல்லவும்](https://rise.edx.dev.drcsystems.ooo/terms-of-use)"
+
+  - custom:
       buttons:
-      - title: వెబ్‌సైట్ పాలసీకి వెళ్లండి
-        type: '5'
-        url: https://rise.edx.dev.drcsystems.ooo/website-policies
-      - title: ఉపయోగ నిబంధనలకు వెళ్లండి
-        type: '6'
-        url: https://rise.edx.dev.drcsystems.ooo/terms-of-use
+        - title: "இணையதளக் கொள்கைக்குச் செல்லவும்"
+          type: "5"
+          url: "https://rise.edx.dev.drcsystems.ooo/website-policies"
+        - title: "பயன்பாட்டு விதிமுறைகளுக்குச் செல்லவும்"
+          type: "6"
+          url: "https://rise.edx.dev.drcsystems.ooo/terms-of-use"
+    channel: "myio"
+
+  utter_policy_menu_odia:
+  - text: "ନିମ୍ନଲିଖିତ ଲିଙ୍କଗୁଡିକ ଖୋଜ:\n
+      \n
+      [ୱେବସାଇଟ୍ ପଲିସି କୁ ଯାଆନ୍ତୁ](https://rise.edx.dev.drcsystems.ooo/website-policies)\n
+      \n
+      [ବ୍ୟବହାର ସର୍ତ୍ତାବଳୀକୁ ଯାଆନ୍ତୁ](https://rise.edx.dev.drcsystems.ooo/terms-of-use)"
+
+  - custom:
+      buttons:
+        - title: "ୱେବସାଇଟ୍ ପଲିସି କୁ ଯାଆନ୍ତୁ"
+          type: "5"
+          url: "https://rise.edx.dev.drcsystems.ooo/website-policies"
+        - title: "ବ୍ୟବହାର ସର୍ତ୍ତାବଳୀକୁ ଯାଆନ୍ତୁ"
+          type: "6"
+          url: "https://rise.edx.dev.drcsystems.ooo/terms-of-use"
+    channel: "myio"
+  
   utter_happy:
-  - text: Great, carry on! Just Type 'hey' or 'hi' anytime to redirect to the Intro Section of The Bot.
+  - text: "Great, carry on! Just Type 'hey' or 'hi' anytime to redirect to the Intro Section of The Bot."
+
   utter_happy_hindi:
-  - text: बढ़िया, जारी रखो! बॉट के इंट्रो सेक्शन में रीडायरेक्ट करने के लिए कभी भी 'हे' या 'हाय' टाइप करें।
+  - text: "बढ़िया, जारी रखो! बॉट के इंट्रो सेक्शन में रीडायरेक्ट करने के लिए कभी भी 'हे' या 'हाय' टाइप करें।"
+
   utter_happy_marathi:
-  - text: छान, चालू ठेवा! बॉटच्या परिचय विभागात पुनर्निर्देशित करण्यासाठी कधीही 'हे' किंवा 'हाय' टाइप करा.
-  utter_happy_telugu:
-  - text: బాగుంది, కొనసాగించండి! బాట్ యొక్క పరిచయ విభాగానికి మళ్లించడానికి ఎప్పుడైనా 'హే' లేదా 'హాయ్' అని టైప్ చేయండి.
+  - text: "छान, चालू ठेवा! बॉटच्या परिचय विभागात पुनर्निर्देशित करण्यासाठी कधीही 'हे' किंवा 'हाय' टाइप करा."
+
+  utter_happy_tamil:
+  - text: "நல்லது, தொடருங்கள்! போட் அறிமுகப் பகுதிக்கு திருப்பிவிட, எந்த நேரத்திலும் 'hey' அல்லது 'hi' என தட்டச்சு செய்யவும்."
+
+  utter_happy_odia:
+  - text: "ଭଲ, ଚାଲ! ବଟ୍ ପରିଚୟ ବିଭାଗକୁ ପୁନ ir ନିର୍ଦ୍ଦେଶିତ ହେବାକୁ ଯେକ time ଣସି ସମୟରେ 'ହେ' କିମ୍ବା 'ହାଏ' ଟାଇପ୍ କରନ୍ତୁ"
+
   utter_affirm:
-  - buttons:
-    - payload: /happy
-      title: Yes
-    - payload: /greet
-      title: No
-    text: Did that solve your issue?
+  - text: "Did that solve your issue?"
+    buttons:
+    - title: "Yes"
+      payload: "/happy"
+    - title: "No"
+      payload: "/greet"
+
   utter_affirm_hindi:
-  - buttons:
-    - payload: /happy_hindi
-      title: हाँ
-    - payload: /greet
-      title: नहीं
-    text: क्या इससे आपकी समस्या हल हो गई?
+  - text: "क्या इससे आपकी समस्या हल हो गई?"
+    buttons:
+    - title: "हाँ"
+      payload: "/happy_hindi"
+    - title: "नहीं"
+      payload: "/greet"
+
   utter_affirm_marathi:
-  - buttons:
-    - payload: /happy_marathi
-      title: होय
-    - payload: /greet
-      title: नाही
-    text: त्यामुळे तुमचा प्रश्न सुटला का?
-  utter_affirm_telugu:
-  - buttons:
-    - payload: /happy_telugu
-      title: అవును
-    - payload: /greet
-      title: నం
-    text: అది మీ సమస్యను పరిష్కరించిందా?
+  - text: "त्यामुळे तुमचा प्रश्न सुटला का?"
+    buttons:
+    - title: "होय"
+      payload: "/happy_marathi"
+    - title: "नाही"
+      payload: "/greet"
+
+  utter_affirm_tamil:
+  - text: "அது உங்கள் பிரச்சனையை தீர்த்ததா?"
+    buttons:
+    - title: "ஆம்"
+      payload: "/happy_tamil"
+    - title: "இல்லை"
+      payload: "/greet"
+
+  utter_affirm_odia:
+  - text: "ତାହା ତୁମର ସମସ୍ୟାର ସମାଧାନ କଲା କି?"
+    buttons:
+    - title: "ହଁ"
+      payload: "/happy_odia"
+    - title: "ନା"
+      payload: "/greet"
+
   utter_goodbye:
-  - text: |-
-      Goodbye!
-      Just Type 'hey' or 'hi' anytime to redirect to the Intro Section of The Bot :))
-  - channel: myio
-    custom:
-      text: Goodbye! <br> Just Type 'hey' or 'hi' anytime to redirect to the Intro Section of The Bot :))
+  - text: "Goodbye!\nJust Type 'hey' or 'hi' anytime to redirect to the Intro Section of The Bot :))"
+  - custom:
+      text: "Goodbye! <br> Just Type 'hey' or 'hi' anytime to redirect to the Intro Section of The Bot :))"
+    channel: "myio"
+
   utter_goodbye_hindi:
-  - text: |-
-      अलविदा!
-      बॉट के इंट्रो सेक्शन में रीडायरेक्ट करने के लिए कभी भी 'हे' या 'हाय' टाइप करें :))
-  - channel: myio
-    custom:
-      text: अलविदा! <br> बॉट के इंट्रो सेक्शन में रीडायरेक्ट करने के लिए कभी भी 'हे' या 'हाय' टाइप करें :))
+  - text: "अलविदा!\nबॉट के इंट्रो सेक्शन में रीडायरेक्ट करने के लिए कभी भी 'हे' या 'हाय' टाइप करें :))"
+  - custom:
+      text: "अलविदा! <br> बॉट के इंट्रो सेक्शन में रीडायरेक्ट करने के लिए कभी भी 'हे' या 'हाय' टाइप करें :))"
+    channel: "myio"
+
   utter_goodbye_marathi:
-  - text: |-
-      निरोप!
-      बॉटच्या परिचय विभागात पुनर्निर्देशित करण्यासाठी कधीही 'हे' किंवा 'हाय' टाइप करा :))
-  - channel: myio
-    custom:
-      text: निरोप! <br> बॉटच्या परिचय विभागात पुनर्निर्देशित करण्यासाठी कधीही 'हे' किंवा 'हाय' टाइप करा :))
-  utter_goodbye_telugu:
-  - text: |-
-      వీడ్కోలు!
-      బాట్ యొక్క పరిచయ విభాగానికి మళ్లించడానికి ఎప్పుడైనా 'హే' లేదా 'హాయ్' అని టైప్ చేయండి :))
-  - channel: myio
-    custom:
-      text: వీడ్కోలు! <br> బాట్ యొక్క పరిచయ విభాగానికి మళ్లించడానికి ఎప్పుడైనా 'హే' లేదా 'హాయ్' అని టైప్ చేయండి :))
+  - text: "निरोप!\nबॉटच्या परिचय विभागात पुनर्निर्देशित करण्यासाठी कधीही 'हे' किंवा 'हाय' टाइप करा :))"
+  - custom:
+      text: "निरोप! <br> बॉटच्या परिचय विभागात पुनर्निर्देशित करण्यासाठी कधीही 'हे' किंवा 'हाय' टाइप करा :))"
+    channel: "myio"
+
+  utter_goodbye_tamil:
+  - text: "குட்பை!\nபோட்டின் அறிமுகப் பகுதிக்கு திருப்பிவிட, எந்த நேரத்திலும் 'hey' அல்லது 'hi' என டைப் செய்யவும் :))"
+  - custom:
+      text: "பிரியாவிடை! <br> போட் அறிமுகப் பகுதிக்கு திருப்பிவிடப்படும் போது 'hey' அல்லது 'hi' என டைப் செய்யவும் :))"
+    channel: "myio"
+
+  utter_goodbye_odia:
+  - text: "ବିଦାୟ! \n ଯେକ time ଣସି ସମୟରେ ବଟ୍ର ପରିଚୟ ବିଭାଗକୁ ପୁନ ir ନିର୍ଦ୍ଦେଶ କରିବାକୁ 'ହେ' କିମ୍ବା 'ହାଏ' ଟାଇପ୍ କରନ୍ତୁ :))"
+  - custom:
+      text: "ବିଦାୟ! <br> ବଟ୍ ପରିଚୟ ବିଭାଗକୁ ପୁନ ନିର୍ଦ୍ଦେଶିତ ହେଲେ 'ହେ' କିମ୍ବା 'ହାଏ' ଟାଇପ୍ କରନ୍ତୁ :))"
+    channel: "myio"
+
   utter_iamabot:
-  - text: I am a Rise Assistant bot, Developed By DRC Systems India.
+  - text: "I am a Rise Assistant bot, Developed By DRC Systems India."
+
   utter_iamabot_hindi:
-  - text: मैं डीआरसी सिस्टम्स इंडिया द्वारा विकसित एक राइज़ असिस्टेंट बॉट हूँ।
+  - text: "मैं डीआरसी सिस्टम्स इंडिया द्वारा विकसित एक राइज़ असिस्टेंट बॉट हूँ।"
+
   utter_iamabot_marathi:
-  - text: मी डीआरसी सिस्टम्स इंडियाने विकसित केलेला राइज असिस्टंट बॉट आहे.
-  utter_iamabot_telugu:
-  - text: నేను రైజ్ అసిస్టెంట్ బాట్, డిఆర్ సి సిస్టమ్స్ ఇండియా ద్వారా డెవలప్ చేయబడింది.
+  - text: "मी डीआरसी सिस्टम्स इंडियाने विकसित केलेला राइज असिस्टंट बॉट आहे."
+
+  utter_iamabot_tamil:
+  - text: "ஐ ரைஸ் அசிஸ்டண்ட் பாட் டிஆர்சி சிஸ்டம்ஸ் இந்தியாவால் உருவாக்கப்பட்டது."
+
+  utter_iamabot_odia:
+  - text: "ଆଇ ରାଇଜ୍ ଆସିଷ୍ଟାଣ୍ଟ ପୋଡ୍ ଟିଆରସି ସିଷ୍ଟମ୍ ଇଣ୍ଡିଆ ଦ୍ୱାରା ବିକଶିତ ହୋଇଛି"
+
   utter_Thanks:
-  - text: |-
-      Your Welcome . Glad I could be of some help!
-      Just type 'hey' or 'hi' again to redirect to the main phase of bot ! :))
-  - channel: myio
-    custom:
-      text: Your Welcome . Glad I could be of some help! <br> Just type 'hey' or 'hi' again to redirect to the main phase of bot ! :))
+  - text: "Your Welcome . Glad I could be of some help!\nJust type 'hey' or 'hi' again to redirect to the main phase of bot ! :))"
+  - custom:
+      text: "Your Welcome . Glad I could be of some help! <br> Just type 'hey' or 'hi' again to redirect to the main phase of bot ! :))"
+    channel: "myio"
+
   utter_Thanks_hindi:
-  - text: |-
-      आपका स्वागत है । खुशी है कि मैं कुछ मदद कर सका!
-      बॉट के मुख्य चरण पर पुनर्निर्देशित करने के लिए बस 'हे' या 'हाय' टाइप करें ! :))
-  - channel: myio
-    custom:
-      text: आपका स्वागत है । खुशी है कि मैं कुछ मदद कर सका! <br> बॉट के मुख्य चरण पर पुनर्निर्देशित करने के लिए बस 'हे' या 'हाय' टाइप करें ! :))
+  - text: "आपका स्वागत है । खुशी है कि मैं कुछ मदद कर सका!\nबॉट के मुख्य चरण पर पुनर्निर्देशित करने के लिए बस 'हे' या 'हाय' टाइप करें ! :))"
+  - custom:
+      text: "आपका स्वागत है । खुशी है कि मैं कुछ मदद कर सका! <br> बॉट के मुख्य चरण पर पुनर्निर्देशित करने के लिए बस 'हे' या 'हाय' टाइप करें ! :))"
+    channel: "myio"
+
   utter_Thanks_marathi:
-  - text: |-
-      तुमचे स्वागत आहे. मला आनंद झाला की मी काही मदत करू शकलो!
-      बॉटच्या मुख्य टप्प्यावर पुनर्निर्देशित करण्यासाठी फक्त 'हे' किंवा 'हाय' पुन्हा टाइप करा ! :))
-  - channel: myio
-    custom:
-      text: तुमचे स्वागत आहे. मला आनंद झाला की मी काही मदत करू शकलो! <br> बॉटच्या मुख्य टप्प्यावर पुनर्निर्देशित करण्यासाठी फक्त 'हे' किंवा 'हाय' पुन्हा टाइप करा ! :))
-  utter_Thanks_telugu:
-  - text: |-
-      మీకు స్వాగతం. నేను కొంత సహాయం చేయగలనని సంతోషిస్తున్నాను!
-      బాట్ యొక్క ప్రధాన దశకు దారి మళ్లించడానికి మళ్లీ 'హే' లేదా 'హాయ్' అని టైప్ చేయండి ! :))
-  - channel: myio
-    custom:
-      text: మీకు స్వాగతం. నేను కొంత సహాయం చేయగలనని సంతోషిస్తున్నాను! <br> బాట్ యొక్క ప్రధాన దశకు దారి మళ్లించడానికి మళ్లీ 'హే' లేదా 'హాయ్' అని టైప్ చేయండి ! :))
+  - text: "तुमचे स्वागत आहे. मला आनंद झाला की मी काही मदत करू शकलो!\nबॉटच्या मुख्य टप्प्यावर पुनर्निर्देशित करण्यासाठी फक्त 'हे' किंवा 'हाय' पुन्हा टाइप करा ! :))"
+  - custom:
+      text: "तुमचे स्वागत आहे. मला आनंद झाला की मी काही मदत करू शकलो! <br> बॉटच्या मुख्य टप्प्यावर पुनर्निर्देशित करण्यासाठी फक्त 'हे' किंवा 'हाय' पुन्हा टाइप करा ! :))"
+    channel: "myio"
+
+  utter_Thanks_tamil:
+  - text: "நீங்கள் வரவேற்கப்படுகிறீர்கள். நான் உதவியாக இருந்ததில் மகிழ்ச்சி!\nபோட்டின் முக்கிய கட்டத்திற்குத் திருப்பிவிட, மீண்டும் 'ஹே' அல்லது 'ஹாய்' என தட்டச்சு செய்யவும்! :))"
+  - custom:
+      text: "நீங்கள் வரவேற்கப்படுகிறீர்கள். நான் உதவியாக இருப்பதில் மகிழ்ச்சி! <br> போட்டின் முக்கிய கட்டத்திற்குத் திருப்பிவிட, மீண்டும் 'hey' அல்லது 'hi' என தட்டச்சு செய்யவும்! :))"
+    channel: "myio"
+
+  utter_Thanks_odia:
+  - text: "ଆପଣଙ୍କୁ ସ୍ୱାଗତ . ମୋ ସହାୟତା କରିବାକୁ ଖୁସିରେ! <br> 'hey' କିମ୍ବା 'hi' ଟାଇପ୍ କରନ୍ତୁ, ପୁଣିଥିବା ରୋଟି ମୁକାବା ଦିଅନ୍ତୁ! :))"
+  - custom:
+      text: "ଆପଣଙ୍କୁ ସ୍ୱାଗତ . ମୋ ସହାୟତା କରିବାକୁ ଖୁସିରେ! <br> 'hey' କିମ୍ବା 'hi' ଟାଇପ୍ କରନ୍ତୁ, ପୁଣିଥିବା ରୋଟି ମୁକାବା ଦିଅନ୍ତୁ! :))"
+    channel: "myio"
+
   utter_out_of_scope:
-  - text: Sorry, I'm not sure how to respond to that. Type "hi" for assistance.
-  - channel: myio
-    custom:
-      text: Sorry, I'm not sure how to respond to that. Type "hi" for assistance.
+  - text: "Sorry, I'm not sure how to respond to that. Type \"hi\" for assistance."
+
   utter_out_of_scope_hindi:
-  - text: माफ़ करें, मुझे नहीं पता कि इसका जवाब कैसे दूँ। सहायता के लिए "हाय" टाइप करें।
-  - channel: myio
-    custom:
-      text: माफ़ करें, मुझे नहीं पता कि इसका जवाब कैसे दूँ। सहायता के लिए "हाय" टाइप करें।
+    - text: "माफ़ करें, मुझे नहीं पता कि इसका जवाब कैसे दूँ। सहायता के लिए \"हाय\" टाइप करें।"
+
   utter_out_of_scope_marathi:
-  - text: माफ करा, त्यावर कसा प्रतिसाद द्यायचा हे मला माहीत नाही. सहाय्यासाठी "हाय" टाइप करा.
-  - channel: myio
-    custom:
-      text: माफ करा, त्यावर कसा प्रतिसाद द्यायचा हे मला माहीत नाही. सहाय्यासाठी "हाय" टाइप करा.
-  utter_out_of_scope_telugu:
-  - text: క్షమించండి, దానికి ఎలా ప్రతిస్పందించాలో నాకు తెలియదు. సహాయం కోసం "హాయ్" అని టైప్ చేయండి.
-  - channel: myio
-    custom:
-      text: క్షమించండి, దానికి ఎలా ప్రతిస్పందించాలో నాకు తెలియదు. సహాయం కోసం "హాయ్" అని టైప్ చేయండి.
-  utter_dashboard:
-  - channel: myio
-    custom:
-      buttons:
-      - title: Go to My Certificates
-        type: '3'
-      text: This is dashboard (mobile)
-    text: This is dashboard
-  - text: This is dashboard (web)
-  utter_home:
-  - channel: myio
-    custom:
-      buttons:
-      - title: Go to home page
-        type: '3'
-      text: This is home page (mobile)
-    text: This is home page (mobile)
-  - text: This is home page (web)
-actions:
-- action_hello_world_action_test
-- action_greet
-- action_html_entity_encode
-- utter_dashboard
-- utter_home
+    - text: "माफ करा, त्यावर कसा प्रतिसाद द्यायचा हे मला माहीत नाही. सहाय्यासाठी \"हाय\" टाइप करा."
+
+  utter_out_of_scope_tamil:
+    - text: "மன்னிக்கவும், அதற்கு எப்படி பதிலளிப்பது என்று தெரியவில்லை. உதவிக்கு \"வணக்கம்\" என தட்டச்சு செய்யவும்."
+
+  utter_out_of_scope_odia:
+    - text: "ଦୁ Sorry ଖିତ, ଏହାର ଉତ୍ତର କିପରି କରିବେ ଜାଣନ୍ତି ନାହିଁ | ସହାୟତା ପାଇଁ \"ହାଏ \" ଟାଇପ୍ କରନ୍ତୁ"
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+
+
